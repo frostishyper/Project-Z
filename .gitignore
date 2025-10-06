@@ -1,0 +1,61 @@
+```
+# =====================================
+# OS-Specific
+# =====================================
+.DS_Store
+Thumbs.db
+
+# =====================================
+# Node / Express Backend
+# =====================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.env
+.env.*   # environment-specific configs
+*.log
+
+# =====================================
+# Android / Android Studio
+# =====================================
+.gradle/
+local.properties
+/.idea/          # IDE configs
+/captures/
+/outputs/
+/build/
+/app/build/
+/*/build/        # any module build dirs
+
+# =====================================
+# Java / JDK
+# =====================================
+*.class
+*.jar
+*.war
+*.ear
+
+# =====================================
+# Miscellaneous
+# =====================================
+*.iml
+*.hprof
+*.orig
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# =====================================
+# VS Code
+# =====================================
+.vscode/
+.history/
+
+# =====================================
+# Other Package Managers / Tools
+# =====================================
+.pnpm-debug.log*
+```
