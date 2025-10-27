@@ -1,0 +1,20 @@
+DO THESE EVERYTIME YOU ABOUT TO MAKE A NEW FEATURE OR CHANGE
+
+Step 1: Get Latest GitHub Info
+- git fetch origin
+
+Step 2: Create Your Local Branch
+- git checkout -b feat/login origin/dev
+
+[checkout -b: Creates a new branch and switches to it.]
+[feat/login: The name of your new local branch.]
+[origin/dev: The starting point. This ensures you're using the "true" version of dev from GitHub, not an outdated local copy.]
+
+Step 3: Publish Your New Branch to GitHub
+- git push -u origin HEAD
+
+[git push: Uploads your branch.]
+[-u: This is the important part. It tells Git to create the local branch on your machine on GitHub and "link" your local branch to it.]
+
+General Rules
+1. Avoid Changing The Same Files, Stick To The Files You Are Working On To Avoid Merge Conflicts
