@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SocialApp</string>
+    <string name="forgot_pin"><u>Forgot Pin?</u></string>
 </resources>

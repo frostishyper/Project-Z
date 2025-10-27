@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0A0A"
+    tools:context=".LoginActivity">
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="87dp"
+        android:layout_height="87dp"
+        android:src="@drawable/blackshoreslogo"
+        android:contentDescription="logo"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="77dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <TextView
+        android:id="@+id/signInText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:fontFamily="@font/inter_medium"
+        android:text="Sign in"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo" />
+
+    <!-- UI Auto Layout -->
+    <LinearLayout
+        android:id="@+id/FormContainer"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:gravity="center_vertical|start"
+        app:layout_constraintTop_toBottomOf="@id/signInText"
+        android:layout_marginTop="37dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5">
+
+        <!-- child elements will go here later -->
+
+        <!-- Number Input Auto Layout -->
+        <LinearLayout
+            android:id="@+id/NumberInputContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="0dp"
+            android:gravity="center_vertical|start">
+
+            <!-- child elements go here-->
+
+            <!-- Label -->
+            <TextView
+                android:id="@+id/AccountNumberLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Account Number"
+                android:textColor="#D1D5DB"
+                android:textSize="11sp"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="center_vertical|start"
+                android:letterSpacing="0"
+                android:includeFontPadding="false" />
+
+            <!-- Input Bar -->
+            <!-- See Drawable For The Input BG -->
+            <EditText
+                android:id="@+id/LoginNumberInput"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/input_field_bg"
+                android:hint="Account number"
+                android:fontFamily="@font/inter"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#CCCCCC"
+                android:textSize="15sp"
+                android:gravity="center_vertical|start"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:inputType="text"
+                android:includeFontPadding="false" />
+        </LinearLayout>
+
+        <!-- Pin Input Auto Layout -->
+        <LinearLayout
+            android:id="@+id/PinInputContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="17dp"
+            android:padding="0dp"
+            android:gravity="center_vertical|start">
+
+            <!-- child elements go here-->
+
+            <!-- Label -->
+            <TextView
+                android:id="@+id/PinLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Account PIN"
+                android:textColor="#D1D5DB"
+                android:textSize="11sp"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="center_vertical|start"
+                android:letterSpacing="0"
+                android:includeFontPadding="false" />
+
+            <!-- Input Bar -->
+            <!-- See Drawable For The Input BG -->
+            <FrameLayout
+                android:id="@+id/LoginPinFrame"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/input_field_bg">
+
+                <EditText
+                    android:background="@null"
+                    android:id="@+id/LoginPinInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="6 Digit Pin"
+                    android:fontFamily="@font/inter"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#CCCCCC"
+                    android:textSize="15sp"
+                    android:gravity="center_vertical|start"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="48dp"
+                    android:inputType="numberPassword"
+                    android:includeFontPadding="false"/>
+
+                <ImageView
+                    android:id="@+id/TogglePinVisibility"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/eye_closed"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="Toggle visibility"/>
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <!-- Login Options Auto Layout -->
+        <LinearLayout
+            android:id="@+id/LoginOptionsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="10dp"
+            android:gravity="center"
+            android:layout_marginTop="37dp">
+
+            <!-- Remember Me Container -->
+            <LinearLayout
+                android:id="@+id/RememberContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical|start">
+
+                <!-- Custom Checkbox Supposed To Be Here But WIP (Cant Debug) -->
+
+
+                <!-- Remember Me Label -->
+                <TextView
+                    android:id="@+id/RememberLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Remember Me"
+                    android:textColor="#D1D5DB"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/inter"
+                    android:gravity="center_vertical|start"
+                    android:letterSpacing="0"
+                    android:includeFontPadding="false" />
+            </LinearLayout>
+
+            <!-- Forgot Pin Container -->
+            <LinearLayout
+                android:id="@+id/ForgotContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|end">
+
+                <TextView
+                    android:id="@+id/ForgotLink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/forgot_pin"
+                    android:textColor="#D1D5DB"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/inter"
+                    android:includeFontPadding="false"
+                    android:gravity="center_vertical|end" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
