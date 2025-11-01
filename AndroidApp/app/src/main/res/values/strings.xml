@@ -24,7 +24,7 @@
     <string name="register_lastname">Last Name</string>
     <string name="register_proceed">Proceed</string>
     <string name="have_account">Already Have An Account?</string>
-    <string name="sign_in"><u>Sign in</u></string>
+    <string name="signIn"><u>Sign in</u></string>
     <string name="register_username">Username</string>
     <string name="register_pin">Pin</string>
     <string name="register_confirm">Confirm</string>

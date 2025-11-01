@@ -1,10 +1,13 @@
 package com.example.socialapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.text.InputType;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
@@ -46,6 +49,13 @@ public class LoginActivity extends AppCompatActivity {
 
             // Keep The Cursor At The End
             pinInput.setSelection(pinInput.getText().length());
+        });
+
+        // Hyperlink to Register
+        TextView registerNow = findViewById(R.id.RegisterNowText);
+        registerNow.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(intent);
         });
     }
 }
