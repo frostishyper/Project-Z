@@ -1,3 +1,21 @@
 <resources>
-    <string name="app_name">SocialApp</string>
+    <string name="app_name">Black Shores Bank</string>
+
+    <!-- General -->
+    <string name="logo_desc">App logo</string>
+    <string name="toggle_visibility_desc">Toggle PIN visibility</string>
+
+    <!-- Login screen -->
+    <string name="sign_in">Sign in</string>
+    <string name="account_number_label">Account Number</string>
+    <string name="account_number_hint">Account number</string>
+    <string name="account_pin_label">Account PIN</string>
+    <string name="pin_hint">6 Digit Pin</string>
+    <string name="forgot_pin"><u>Forgot Pin?</u></string>
+    <string name="login">Login</string>
+    <string name="or_text">or</string>
+    <string name="no_account">Don\'t have an account?</string>
+
+    <!-- Underlined Register -->
+    <string name="register_now"><u>Register Now</u></string>
 </resources>
