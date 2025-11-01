@@ -16,6 +16,21 @@
     <string name="or_text">or</string>
     <string name="no_account">Don\'t have an account?</string>
 
+    <!-- Register screen -->
+    <string name="register">Register Account</string> 
+    <string name="register_number">Mobile #</string> 
+    <string name="register_email">Email</string>
+    <string name="register_firstname">First Name</string>
+    <string name="register_lastname">Last Name</string>
+    <string name="register_proceed">Proceed</string>
+    <string name="have_account">Already Have An Account?</string>
+    <string name="sign_in"><u>Sign in</u></string>
+    <string name="register_username">Username</string>
+    <string name="register_pin">Pin</string>
+    <string name="register_confirm">Confirm</string>
+    
+    
+
     <!-- Underlined Register -->
     <string name="register_now"><u>Register Now</u></string>
 </resources>
