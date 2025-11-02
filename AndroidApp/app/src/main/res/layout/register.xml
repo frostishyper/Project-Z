@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#0A0A0A"
+    tools:context=".RegisterActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/signup1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0A0A0A">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="87dp"
+            android:layout_height="87dp"
+            android:src="@drawable/blackshoreslogo"
+            android:contentDescription="@string/logo_desc"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="77dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" />
+
+        <!-- Page Header -->
+        <TextView
+            android:id="@+id/signInText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:fontFamily="@font/inter_medium"
+            android:text="@string/register_header"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logo" />
+
+        <!-- UI Frame -->
+        <LinearLayout
+            android:id="@+id/FormContainer"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:gravity="center_vertical|start"
+            app:layout_constraintTop_toBottomOf="@id/signInText"
+            android:layout_marginTop="37dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5">
+
+            <!-- Number Input Frame -->
+            <LinearLayout
+                android:id="@+id/NumberInputContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="0dp"
+                android:gravity="center_vertical|start">
+
+                <!-- Label -->
+                <TextView
+                    android:id="@+id/AccountNumberLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register_number"
+                    android:textColor="#D1D5DB"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center_vertical|start"
+                    android:letterSpacing="0"
+                    android:includeFontPadding="false" />
+
+                <!-- Input -->
+                <EditText
+                    android:id="@+id/RegisterNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/input_field_bg"
+                    android:fontFamily="@font/inter"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#CCCCCC"
+                    android:textSize="15sp"
+                    android:gravity="center_vertical|start"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:inputType="text"
+                    android:includeFontPadding="false" />
+            </LinearLayout>
+
+            <!-- Email Frame -->
+            <LinearLayout
+                android:id="@+id/EmailInputContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="17dp"
+                android:padding="0dp"
+                android:gravity="center_vertical|start">
+
+                <TextView
+                    android:id="@+id/AccountEmailLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register_email"
+                    android:textColor="#D1D5DB"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center_vertical|start"
+                    android:letterSpacing="0"
+                    android:includeFontPadding="false" />
+
+                <EditText
+                    android:id="@+id/RegisterEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/input_field_bg"
+                    android:fontFamily="@font/inter"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#CCCCCC"
+                    android:textSize="15sp"
+                    android:gravity="center_vertical|start"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:inputType="text"
+                    android:includeFontPadding="false" />
+            </LinearLayout>
+
+            <!-- Firstname Frame -->
+            <LinearLayout
+                android:id="@+id/FirstnameInputContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="17dp"
+                android:padding="0dp"
+                android:gravity="center_vertical|start">
+
+                <TextView
+                    android:id="@+id/AccountFirstnameLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register_firstname"
+                    android:textColor="#D1D5DB"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center_vertical|start"
+                    android:letterSpacing="0"
+                    android:includeFontPadding="false" />
+
+                <EditText
+                    android:id="@+id/RegisterFirstname"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/input_field_bg"
+                    android:fontFamily="@font/inter"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#CCCCCC"
+                    android:textSize="15sp"
+                    android:gravity="center_vertical|start"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:inputType="text"
+                    android:includeFontPadding="false" />
+            </LinearLayout>
+
+            <!-- Lastname Frame -->
+            <LinearLayout
+                android:id="@+id/LastnameInputContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="17dp"
+                android:padding="0dp"
+                android:gravity="center_vertical|start">
+
+                <TextView
+                    android:id="@+id/AccountLastnameLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register_lastname"
+                    android:textColor="#D1D5DB"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center_vertical|start"
+                    android:letterSpacing="0"
+                    android:includeFontPadding="false" />
+
+                <EditText
+                    android:id="@+id/RegisterLastname"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/input_field_bg"
+                    android:fontFamily="@font/inter"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#CCCCCC"
+                    android:textSize="15sp"
+                    android:gravity="center_vertical|start"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:inputType="text"
+                    android:includeFontPadding="false" />
+            </LinearLayout>
+
+            <!-- Lastname Frame -->
+            <LinearLayout
+                android:id="@+id/UsernameInputContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="17dp"
+                android:padding="0dp"
+                android:gravity="center_vertical|start">
+
+                <TextView
+                    android:id="@+id/AccountUsernameLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register_username"
+                    android:textColor="#D1D5DB"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center_vertical|start"
+                    android:letterSpacing="0"
+                    android:includeFontPadding="false" />
+
+                <EditText
+                    android:id="@+id/RegisterUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/input_field_bg"
+                    android:fontFamily="@font/inter"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#CCCCCC"
+                    android:textSize="15sp"
+                    android:gravity="center_vertical|start"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:inputType="text"
+                    android:includeFontPadding="false" />
+            </LinearLayout>
+
+            <!-- PIN Frame -->
+            <LinearLayout
+                android:id="@+id/PinRegisterContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="17dp"
+                android:padding="0dp"
+                android:gravity="center_vertical|start">
+
+                <!-- Label -->
+                <TextView
+                    android:id="@+id/PinRegisterLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register_pin"
+                    android:textColor="#D1D5DB"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center_vertical|start"
+                    android:letterSpacing="0"
+                    android:includeFontPadding="false" />
+
+                <!-- Pin Container  -->
+                <FrameLayout
+                    android:id="@+id/RegisterPinFrame"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/input_field_bg">
+
+                    <!-- Pin Input -->
+                    <EditText
+                        android:id="@+id/RegisterPin"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:fontFamily="@font/inter"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#CCCCCC"
+                        android:textSize="15sp"
+                        android:gravity="center_vertical|start"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="48dp"
+                        android:inputType="numberPassword"
+                        android:includeFontPadding="false" />
+
+                    <!-- Toggle Icon -->
+                    <ImageView
+                        android:id="@+id/TogglePinVisibility"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/eye_closed"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_marginEnd="16dp"
+                        android:contentDescription="@string/toggle_visibility_desc" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- Confirm Frame -->
+            <LinearLayout
+                android:id="@+id/ConfirmRegisterContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="17dp"
+                android:padding="0dp"
+                android:gravity="center_vertical|start">
+
+                <!-- Label -->
+                <TextView
+                    android:id="@+id/ConfirmRegisterLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register_confirm"
+                    android:textColor="#D1D5DB"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center_vertical|start"
+                    android:letterSpacing="0"
+                    android:includeFontPadding="false" />
+
+                <!-- Pin Container  -->
+                <FrameLayout
+                    android:id="@+id/RegisterConfirmFrame"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/input_field_bg">
+
+                    <!-- Pin Input -->
+                    <EditText
+                        android:id="@+id/RegisterConfirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:fontFamily="@font/inter"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#CCCCCC"
+                        android:textSize="15sp"
+                        android:gravity="center_vertical|start"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="48dp"
+                        android:inputType="numberPassword"
+                        android:includeFontPadding="false" />
+
+                    <!-- Toggle Icon -->
+                    <ImageView
+                        android:id="@+id/ToggleConfirmVisibility"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/eye_closed"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_marginEnd="16dp"
+                        android:contentDescription="@string/toggle_visibility_desc" />
+                </FrameLayout>
+            </LinearLayout>
+
+
+
+            <!-- Proceed Button -->
+
+            <!-- Login Frame -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/RegisterButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/general_button"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:letterSpacing="0"
+                android:lineHeight="22sp"
+                android:padding="0dp"
+                android:stateListAnimator="@null"
+                android:text="@string/register_btn"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:id="@+id/SignInContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:paddingHorizontal="7dp"
+                android:paddingVertical="7dp">
+
+                <TextView
+                    android:id="@+id/HaveAccountText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register_login_prompt"
+                    android:textColor="#9CA3AF"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter"
+                    android:letterSpacing="0"
+                    android:includeFontPadding="false"
+                    android:gravity="center_vertical"
+                    android:layout_marginEnd="13dp" />
+
+                <TextView
+                    android:id="@+id/SignInNowText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register_login_link"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter"
+                    android:letterSpacing="0"
+                    android:includeFontPadding="false"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
