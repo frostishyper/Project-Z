@@ -43,6 +43,13 @@
     <string name="home_games">Games</string>
     <string name="home_transactions">Transactions</string>
     <string name="home_seeall">See Aall</string>
+
+    <!-- Profile screen -->
+    <string name="profile_placeholder_name">Lebron Raymone Jame</string>
+    <string name="profile_placeholder_handle">\@Lebron_James</string>
+    <string name="profile_placeholder_number">09123456789</string>
+    <string name="profile_placeholder_email">Lebron@email.com</string>
+    <string name="profile_logout_btn">Log Out</string>
     
 
 </resources>
