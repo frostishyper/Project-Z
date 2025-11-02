@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:fontFamily="@font/inter_medium"
-            android:text="@string/register"
+            android:text="@string/register_header"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -384,24 +384,25 @@
 
 
             <!-- Proceed Button -->
+
+            <!-- Login Frame -->
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/ProceedButton"
+                android:id="@+id/RegisterButton"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="40dp"
                 android:background="@drawable/general_button"
-                android:text="@string/register_proceed"
-                android:textColor="#FFFFFF"
-                android:textSize="13sp"
-                android:lineHeight="22sp"
                 android:fontFamily="@font/inter_medium"
                 android:gravity="center"
-                android:letterSpacing="0"
                 android:includeFontPadding="false"
+                android:letterSpacing="0"
+                android:lineHeight="22sp"
+                android:padding="0dp"
                 android:stateListAnimator="@null"
-                android:padding="0dp" />
+                android:text="@string/register_btn"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp" />
 
-            <!-- Login Frame -->
             <LinearLayout
                 android:id="@+id/SignInContainer"
                 android:layout_width="match_parent"
@@ -417,7 +418,7 @@
                     android:id="@+id/HaveAccountText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/have_account"
+                    android:text="@string/register_login_prompt"
                     android:textColor="#9CA3AF"
                     android:textSize="14sp"
                     android:fontFamily="@font/inter"
@@ -430,7 +431,7 @@
                     android:id="@+id/SignInNowText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/signIn"
+                    android:text="@string/register_login_link"
                     android:textColor="#FFFFFF"
                     android:textSize="14sp"
                     android:fontFamily="@font/inter"
