@@ -22,7 +22,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5">
 
-        <!-- EU Inner Frame -->
+        <!-- Back Button Container -->
+        <LinearLayout
+            android:id="@+id/BackBtnContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp">
+
+            <ImageView
+                android:id="@+id/BackBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ico_back"
+                android:contentDescription="@string/back_button_desc" />
+        </LinearLayout>
+
+        <!-- Profile Inner Frame -->
         <LinearLayout
             android:id="@+id/ProfileInnerFrame"
             android:layout_width="match_parent"

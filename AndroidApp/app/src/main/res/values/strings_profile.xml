@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Profile screen -->
+    <string name="back_button_desc">Back Btn</string>
+    <string name="profile_placeholder_name">Lebron Raymone Jame</string>
+    <string name="profile_placeholder_handle">\@Lebron_James</string>
+    <string name="profile_placeholder_number">09123456789</string>
+    <string name="profile_placeholder_email">Lebron@email.com</string>
+    <string name="profile_logout_btn">Log Out</string>
+
+
+</resources>
