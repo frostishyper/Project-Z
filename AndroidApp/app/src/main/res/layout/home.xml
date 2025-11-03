@@ -8,11 +8,339 @@
     android:background="#0A0A0A"
     tools:context=".HomeActivity">
 
-    
+    <!-- Home Frame -->
+    <LinearLayout
+        android:id="@+id/HomeFrame"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="4dp"
+        android:paddingVertical="22dp"
+        android:gravity="top|start"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5">
 
-    
+        <!-- User Container -->
+        <LinearLayout
+            android:id="@+id/UserContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="5dp"
+            android:paddingVertical="5dp">
+
+            <TextView
+                android:id="@+id/Home_AtSymbol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_at"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:fontFamily="@font/inter_medium"
+                android:includeFontPadding="false"
+                android:letterSpacing="0" />
+
+            <TextView
+                android:id="@+id/Home_NamePlaceholder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_name_placeholder"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:fontFamily="@font/inter_medium"
+                android:includeFontPadding="false"
+                android:letterSpacing="0"
+                android:layout_marginStart="0dp" />
+
+            <ImageView
+                android:id="@+id/Home_ChevronRight"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="6dp"
+                android:src="@drawable/ico_chevron_right"
+                android:contentDescription="@string/home_chevron_desc"/>
+        </LinearLayout>
 
 
+        <!-- Wallet Frame -->
+        <LinearLayout
+        android:id="@+id/WalletDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="33dp"
+         android:layout_marginTop="17dp"
+        android:background="@drawable/card_bg"
+        android:gravity="center_vertical|start">
+
+            <!-- Balance Row -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:id="@+id/HomeCurrency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_currency"
+                    android:textColor="#2E7D32"
+                    android:textSize="30sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:includeFontPadding="false" />
+
+                <Space
+                    android:layout_width="7dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/WalletBalance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_balance_placeholder"
+                    android:textColor="#2E7D32"
+                    android:textSize="30sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:includeFontPadding="false" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/BalanceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_balance_label"
+                android:textColor="#4C4C4C"
+                android:textSize="15sp"
+                android:fontFamily="@font/inter_medium"
+                android:includeFontPadding="false" />
+        </LinearLayout>
+
+        <!-- Actions Frame -->
+        <LinearLayout
+            android:id="@+id/ActionRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="7dp"
+            android:gravity="center"
+            android:weightSum="4"
+            android:layout_marginTop="17dp">
+
+            <!-- Action 1: Cash In -->
+            <LinearLayout
+                android:id="@+id/Action_CashIn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:id="@+id/IconBox_CashIn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="10dp"
+                    android:background="@drawable/iconbox_bg"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/Icon_CashIn"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ico_cash"
+                        android:contentDescription="@string/home_cash_in" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/Label_CashIn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_cash_in"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="@font/inter_medium"
+                    android:textSize="16sp"
+                    android:lineHeight="17sp"
+                    android:letterSpacing="0" />
+            </LinearLayout>
+
+            <!-- Action 2: Transfer -->
+            <LinearLayout
+                android:id="@+id/Action_Transfer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:id="@+id/IconBox_Transfer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="10dp"
+                    android:background="@drawable/iconbox_bg"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/Icon_Transfer"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ico_plane"
+                        android:contentDescription="@string/home_transfer" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/Label_Transfer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_transfer"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="@font/inter_medium"
+                    android:textSize="16sp"
+                    android:lineHeight="17sp"
+                    android:letterSpacing="0" />
+            </LinearLayout>
+
+            <!-- Action 3: Shop -->
+            <LinearLayout
+                android:id="@+id/Action_Shop"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:id="@+id/IconBox_Shop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="10dp"
+                    android:background="@drawable/iconbox_bg"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/Icon_Shop"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ico_shop"
+                        android:contentDescription="@string/home_shop" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/Label_Shop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_shop"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="@font/inter_medium"
+                    android:textSize="16sp"
+                    android:lineHeight="17sp"
+                    android:letterSpacing="0" />
+            </LinearLayout>
+
+            <!-- Action 4: Games -->
+            <LinearLayout
+                android:id="@+id/Action_Games"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:id="@+id/IconBox_Games"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="10dp"
+                    android:background="@drawable/iconbox_bg"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/Icon_Games"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ico_dice"
+                        android:contentDescription="@string/home_games" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/Label_Games"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_games"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="@font/inter_medium"
+                    android:textSize="16sp"
+                    android:lineHeight="17sp"
+                    android:letterSpacing="0" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- TransactionsDisplay -->
+        <LinearLayout
+            android:id="@+id/transactionsDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_bg"
+            android:orientation="vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="12dp"
+            android:layout_marginTop="13dp">
+
+            <!-- TransactionLabels -->
+            <LinearLayout
+                android:id="@+id/transactionLabels"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:weightSum="1">
+
+                <!-- Transactions Label -->
+                <TextView
+                    android:id="@+id/TransactionsLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_transactions"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_weight="0.5"
+                    android:gravity="start" />
+
+                <!-- Right label -->
+                <TextView
+                    android:id="@+id/SeeAllTransactions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_see"
+                    android:textColor="#CCCCCC"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_weight="0.5"
+                    android:gravity="end" />
+            </LinearLayout>
+
+            <!-- Add the 5 most recent entries here -->
+
+            <!-- Entry Examples -->
+            <!-- Transaction Sent -->
+            <include layout="@layout/home_transaction_sent" />
+            <include layout="@layout/home_transaction_recieved" />
+            <include layout="@layout/home_transaction_purchase" />
 
 
+        </LinearLayout>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

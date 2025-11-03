@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Home screen -->
+    <string name="home_chevron_desc">Chevron Right</string>
+    <string name="home_at">\@</string>
+    <string name="home_currency">$</string>
+    <string name="home_name_placeholder">Lebron_James</string>
+    <string name="home_balance_placeholder">420.69</string>
+    <string name="home_balance_label">Wallet Balance</string>
+    <string name="home_cash_in">Cash In</string>
+    <string name="home_transfer">Transfer</string>
+    <string name="home_shop">Shop</string>
+    <string name="home_games">Games</string>
+    <string name="home_transactions">Transactions</string>
+    <string name="home_see"><u>See All</u></string>
+    <string name="home_transaction_currency">$</string>
+
+    <!-- Transactions Placeholders -->
+    <string name="home_transaction_sent">Sent to</string>
+    <string name="home_transaction_recieved">Recieved from</string>
+    <string name="home_transaction_person">Luka Doncic</string>
+
+    <string name="home_transaction_date">20 Dec 2025</string>
+    <string name="home_transaction_amount">20 Dec 2025</string>
+
+    <string name="home_transaction_purchase">Purchased from</string>
+    <string name="home_transaction_merchant">Valve corp</string>
+
+
+
+</resources>

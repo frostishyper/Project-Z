@@ -48,8 +48,8 @@
             android:layout_width="330dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingTop="7dp"
-            android:paddingBottom="7dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="50dp"
             android:gravity="center_vertical|start"
             app:layout_constraintTop_toBottomOf="@id/signInText"
             android:layout_marginTop="37dp"
@@ -381,12 +381,8 @@
                 </FrameLayout>
             </LinearLayout>
 
-
-
-            <!-- Proceed Button -->
-
-            <!-- Login Frame -->
-            <androidx.appcompat.widget.AppCompatButton
+            <!-- Register Button -->
+             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/RegisterButton"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
@@ -403,6 +399,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="13sp" />
 
+            <!-- Login Frame -->
             <LinearLayout
                 android:id="@+id/SignInContainer"
                 android:layout_width="match_parent"

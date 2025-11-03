@@ -6,43 +6,4 @@
     <string name="logo_desc">App logo</string>
     <string name="toggle_visibility_desc">Toggle PIN visibility</string>
 
-    <!-- Login screen -->
-    <string name="login_header">Sign in</string>
-    <string name="login_number">Account Number</string>
-    <string name="login_number_hint">Account number</string>
-    <string name="login_pin">Account PIN</string>
-    <string name="login_pin_hint">6 Digit Pin</string>
-    <string name="login_forgot"><u>Forgot Pin?</u></string>
-    <string name="login_btn">Login</string>
-    <string name="login_or">or</string>
-    <string name="login_register_prompt">Don\'t have an account?</string>
-    <string name="login_register_link"><u>Register Now</u></string>
-
-    <!-- Register screen -->
-    <string name="register_header">Register Account</string> 
-    <string name="register_number">Mobile #</string> 
-    <string name="register_email">Email</string>
-    <string name="register_firstname">First Name</string>
-    <string name="register_lastname">Last Name</string>
-    <string name="register_login"><u>Sign in</u></string>
-    <string name="register_username">Username</string>
-    <string name="register_pin">Pin</string>
-    <string name="register_btn">Register</string>
-    <string name="register_login_prompt">Already Have An Account?</string>
-    <string name="register_login_link"><u>Login</u></string>
-    
-
-    <!-- Home screen -->
-    <string name="home_at">\@</string>
-    <string name="home_currency">$</string>
-    <string name="home_name_placehold">John Doe</string>
-    <string name="home_balance_placeholder">420.69</string>
-    <string name="home_cash_in">Cash In</string>
-    <string name="home_transer">Transfer</string>
-    <string name="home_shop">Shop</string>
-    <string name="home_games">Games</string>
-    <string name="home_transactions">Transactions</string>
-    <string name="home_seeall">See Aall</string>
-    
-
 </resources>

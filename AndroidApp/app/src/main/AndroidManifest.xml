@@ -27,6 +27,8 @@
         </activity>
 
         <activity android:name=".RegisterActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".ProfileActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
