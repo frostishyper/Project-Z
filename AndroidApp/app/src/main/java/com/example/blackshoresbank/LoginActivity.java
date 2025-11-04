@@ -22,7 +22,7 @@ import retrofit2.Response;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends BaseActivity {
 
     private boolean isPinVisible = false;
     private EditText numberInput;
@@ -31,6 +31,11 @@ public class LoginActivity extends AppCompatActivity {
     private TokenManager tokenManager;
 
     @Override
+    // This page is public, no auth needed
+    protected boolean requiresAuth() {
+        return false;
+    }
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);

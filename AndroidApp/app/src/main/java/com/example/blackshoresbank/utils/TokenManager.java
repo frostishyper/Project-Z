@@ -50,4 +50,22 @@ public class TokenManager {
     public boolean isLoggedIn() {
         return getToken() != null;
     }
+
+    // Getter Methods
+    public String getUsername() {
+        return prefs.getString(KEY_USERNAME, null);
+    }
+
+    public String getFirstName() {
+        return prefs.getString(KEY_FIRST_NAME, null);
+    }
+
+    public String getLastName() {
+        return prefs.getString(KEY_LAST_NAME, null);
+    }
+
+    public String getEmail() {
+        return prefs.getString(KEY_EMAIL, null);
+    }
+
 }

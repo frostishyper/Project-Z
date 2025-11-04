@@ -23,7 +23,7 @@ import retrofit2.Response;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends BaseActivity {
 
     private boolean isPinVisible = false;
     private boolean isConfirmVisible = false;
@@ -33,6 +33,11 @@ public class RegisterActivity extends AppCompatActivity {
     private Button registerButton;
 
     @Override
+    // This page is public, no auth needed
+    protected boolean requiresAuth() {
+        return false;
+    }
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
