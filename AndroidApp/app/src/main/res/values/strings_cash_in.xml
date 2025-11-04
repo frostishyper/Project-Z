@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Cash In Start Screen -->
+    <string name="title_cash_in">Cash in</string>
+    <string name="subtitle_partners">Our Partners</string>
+
+    <!-- Partner Names -->
+    <string name="partner_visa">Visa</string>
+    <string name="partner_mastercard">MasterCard</string>
+    <string name="partner_amex">American Express</string>
+    <string name="partner_jcb">Japan Credit Bureau</string>
+    <string name="partner_discover">Discover</string>
+
+    <!-- Content Descriptions -->
+    <string name="desc_back_button">Back</string>
+    <string name="desc_arrow">Arrow</string>
+    <string name="desc_logo_visa">Visa Logo</string>
+    <string name="desc_logo_mastercard">MasterCard Logo</string>
+    <string name="desc_logo_amex">American Express Logo</string>
+    <string name="desc_logo_jcb">JCB Logo</string>
+    <string name="desc_logo_discover">Discover Logo</string>
+    <string name="desc_logo_blackshores">Blackshores Logo</string>
+
+
+    <!-- Cash In Card Details -->
+    <string name="card_mastercard">MasterCard</string>
+    <string name="helper_card_digits">16 Digits</string>
+    <string name="helper_card_digits_amex">15 Digits</string>
+
+    <string name="label_card_number">Card Number</string>
+    <string name="label_expiry_date">Expiry Date</string>
+    <string name="hint_expiry_month">MM</string>
+    <string name="hint_expiry_year">YY</string>
+    <string name="helper_expiry">MM/YY</string>
+
+    <string name="label_cvv">CVV</string>
+    <string name="hint_cvv">301</string>
+    <string name="helper_cvv_digits">3 Digits</string>
+    <string name="helper_cvv_digits_amex">4 Digits (CID)</string>
+
+    <string name="button_cash_in">Cash in</string>
+
+    <!-- Partner card types -->
+    <string name="card_visa">Visa</string>
+    <string name="card_amex">American Express</string>
+    <string name="card_jcb">JCB</string>
+    <string name="card_discover">Discover</string>
+
+    <!-- Error Messages -->
+    <string name="error_invalid_card_number">Invalid Card Number</string>
+    <string name="error_invalid_expiry">Invalid Expiry</string>
+    <string name="error_invalid_cvv">Invalid CVV</string>
+    <string name="error_card_number_required">Card number required</string>
+    <string name="error_invalid_card_length">Invalid card number length</string>
+    <string name="error_expiry_required">Expiry date required</string>
+    <string name="error_invalid_month">Invalid month</string>
+    <string name="error_cvv_required">CVV required</string>
+    <string name="error_invalid_cvv_length">Invalid CVV length</string>
+
+</resources>

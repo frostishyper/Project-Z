@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="5dp"
+    android:paddingVertical="5dp">
+
+    <!-- Top Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/Home_TransactionType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/home_transaction_recieved"
+            android:textColor="#AAAAAA"
+            android:textSize="10sp"
+            android:fontFamily="@font/inter_medium" />
+
+        <TextView
+            android:id="@+id/Home_TransactionDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_transaction_date"
+            android:textColor="#AAAAAA"
+            android:textSize="10sp"
+            android:fontFamily="@font/inter_medium" />
+    </LinearLayout>
+
+    <!-- Bottom Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/Home_TransactionPartner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/home_transaction_person"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:fontFamily="@font/inter_medium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_transaction_currency"
+            android:textColor="#2E7D32"
+            android:textSize="13sp"
+            android:fontFamily="@font/inter_medium"
+            android:layout_marginEnd="2dp" />
+
+        <TextView
+            android:id="@+id/Home_TransactionAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="150"
+            android:textColor="#2E7D32"
+            android:textSize="13sp"
+            android:fontFamily="@font/inter_medium" />
+    </LinearLayout>
+</LinearLayout>

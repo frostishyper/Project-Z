@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">SocialApp</string>
+    <string name=""></string>
+    <string name="app_name">Black Shores Bank</string>
+
+    <!-- General -->
+    <string name="logo_desc">App logo</string>
+    <string name="toggle_visibility_desc">Toggle PIN visibility</string>
+
 </resources>

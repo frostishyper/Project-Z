@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Register screen -->
+    <string name="register_header">Register Account</string>
+    <string name="register_number">Mobile #</string>
+    <string name="register_email">Email</string>
+    <string name="register_firstname">First Name</string>
+    <string name="register_lastname">Last Name</string>
+    <string name="register_login"><u>Sign in</u></string>
+    <string name="register_username">Username</string>
+    <string name="register_pin">Pin</string>
+    <string name="register_btn">Register</string>
+    <string name="register_login_prompt">Already Have An Account?</string>
+    <string name="register_login_link"><u>Login</u></string>
+
+</resources>
