@@ -1,4 +1,4 @@
-package com.example.socialapp;
+package com.example.blackshoresbank;
 
 import org.junit.Test;
 

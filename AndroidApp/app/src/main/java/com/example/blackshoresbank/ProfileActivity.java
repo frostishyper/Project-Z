@@ -1,9 +1,7 @@
-package com.example.socialapp;
+package com.example.blackshoresbank;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 public class ProfileActivity  extends AppCompatActivity {

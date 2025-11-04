@@ -75,7 +75,7 @@
 
             <!-- Input -->
             <EditText
-                android:id="@+id/LoginNumberInput"
+                android:id="@+id/LoginNumber"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="8dp"
@@ -127,7 +127,7 @@
 
                 <!-- Pin Input -->
                 <EditText
-                    android:id="@+id/LoginPinInput"
+                    android:id="@+id/LoginPin"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@null"
