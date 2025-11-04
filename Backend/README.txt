@@ -8,17 +8,6 @@ For After Each Pull, Open Terminal And Run These Command(s) First
 To Run Backend Server (Read package.json)
 - npm run dev
 
-
-
-
-
-
-
-
-
-
-
-
 MySQL DB Structure
 
 (Inside One Schema):

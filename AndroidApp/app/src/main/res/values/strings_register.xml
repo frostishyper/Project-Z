@@ -10,6 +10,7 @@
     <string name="register_login"><u>Sign in</u></string>
     <string name="register_username">Username</string>
     <string name="register_pin">Pin</string>
+    <string name="register_confirm">Confirm</string>
     <string name="register_btn">Register</string>
     <string name="register_login_prompt">Already Have An Account?</string>
     <string name="register_login_link"><u>Login</u></string>
