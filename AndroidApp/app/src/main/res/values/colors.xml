@@ -2,4 +2,17 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Backgrounds -->
+    <color name="color_background_dark">#0A0A0A</color>
+
+    <!-- Text Colors -->
+    <color name="color_text_white">#FFFFFF</color>
+    <color name="color_text_gray_light">#CCCCCC</color>
+    <color name="color_text_gray_medium">#D1D5DB</color>
+    <color name="color_text_gray_dark">#4C4C4C</color>
+    <color name="color_error_red">#C62828</color>
+
+    <!-- Icon Tint -->
+    <color name="color_icon_tint">#CCCCCC</color>
 </resources>

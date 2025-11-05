@@ -12,6 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.ContextCompat;
 
+/**
+ * Activity for handling card payment details.
+ * Dynamically adapts UI and validation based on selected card type (Visa, MasterCard, etc.)
+ */
 public class CardDetailsActivity extends AppCompatActivity {
 
     private String cardType;
@@ -23,6 +27,7 @@ public class CardDetailsActivity extends AppCompatActivity {
     private EditText etExpiryYear;
     private EditText etCvv;
     private TextView helperCardDigits;
+    private TextView helperExpiry;
     private TextView helperCvvDigits;
     private TextView errorCardNumber;
     private TextView errorExpiry;
@@ -34,6 +39,7 @@ public class CardDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_details);
 
+        // Get card type passed from previous activity
         cardType = getIntent().getStringExtra("CARD_TYPE");
 
         initializeViews();
@@ -42,8 +48,11 @@ public class CardDetailsActivity extends AppCompatActivity {
         setupClickListeners();
     }
 
+    /**
+     * Initialize all view references from the layout
+     */
     private void initializeViews() {
-        backButton = findViewById(R.id.back_button);
+        backButton = findViewById(R.id.ico_back);
         cardLogo = findViewById(R.id.card_logo);
         cardName = findViewById(R.id.card_name);
         etCardNumber = findViewById(R.id.et_card_number);
@@ -51,6 +60,7 @@ public class CardDetailsActivity extends AppCompatActivity {
         etExpiryYear = findViewById(R.id.et_expiry_year);
         etCvv = findViewById(R.id.et_cvv);
         helperCardDigits = findViewById(R.id.helper_card_digits);
+        helperExpiry = findViewById(R.id.helper_expiry);
         helperCvvDigits = findViewById(R.id.helper_cvv_digits);
         errorCardNumber = findViewById(R.id.error_card_number);
         errorExpiry = findViewById(R.id.error_expiry);
@@ -58,14 +68,17 @@ public class CardDetailsActivity extends AppCompatActivity {
         btnCashIn = findViewById(R.id.btn_cash_in);
     }
 
+    /**
+     * Configure UI elements based on the selected card type
+     * Sets appropriate logo, name, and input field lengths for each card
+     */
     private void setupCardType() {
         if ("Visa".equals(cardType)) {
             cardLogo.setImageResource(R.drawable.visa_logo);
             cardName.setText(R.string.card_visa);
             helperCardDigits.setText(R.string.helper_card_digits);
             helperCvvDigits.setText(R.string.helper_cvv_digits);
-            // 16 digits -> 16 + 3 hyphens = 19 chars
-            etCardNumber.setFilters(new InputFilter[]{new InputFilter.LengthFilter(19)});
+            etCardNumber.setFilters(new InputFilter[]{new InputFilter.LengthFilter(19)}); // 16 digits + 3 hyphens
             etCvv.setFilters(new InputFilter[]{new InputFilter.LengthFilter(3)});
 
         } else if ("MasterCard".equals(cardType)) {
@@ -75,15 +88,14 @@ public class CardDetailsActivity extends AppCompatActivity {
             helperCvvDigits.setText(R.string.helper_cvv_digits);
             etCardNumber.setFilters(new InputFilter[]{new InputFilter.LengthFilter(19)});
             etCvv.setFilters(new InputFilter[]{new InputFilter.LengthFilter(3)});
+
         } else if ("AmericanExpress".equals(cardType)) {
             cardLogo.setImageResource(R.drawable.amex_logo);
             cardName.setText(R.string.card_amex);
-            // AmEx helper strings you may have different ones
             helperCardDigits.setText(R.string.helper_card_digits_amex);
             helperCvvDigits.setText(R.string.helper_cvv_digits_amex);
-            // 15 digits -> 15 + 3 hyphens = 18 chars (4-4-4-3 grouping)
-            etCardNumber.setFilters(new InputFilter[]{new InputFilter.LengthFilter(18)});
-            etCvv.setFilters(new InputFilter[]{new InputFilter.LengthFilter(4)});
+            etCardNumber.setFilters(new InputFilter[]{new InputFilter.LengthFilter(18)}); // 15 digits + 3 hyphens
+            etCvv.setFilters(new InputFilter[]{new InputFilter.LengthFilter(4)}); // AmEx uses 4-digit CVV
 
         } else if ("JCB".equals(cardType)) {
             cardLogo.setImageResource(R.drawable.jcb_logo);
@@ -102,7 +114,7 @@ public class CardDetailsActivity extends AppCompatActivity {
             etCvv.setFilters(new InputFilter[]{new InputFilter.LengthFilter(3)});
 
         } else {
-            // default behavior
+            // Default behavior for unknown card types
             helperCardDigits.setText(R.string.helper_card_digits);
             helperCvvDigits.setText(R.string.helper_cvv_digits);
             etCardNumber.setFilters(new InputFilter[]{new InputFilter.LengthFilter(19)});
@@ -110,7 +122,12 @@ public class CardDetailsActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Setup real-time input validation and formatting for all input fields
+     * Includes auto-formatting for card numbers with hyphens
+     */
     private void setupInputValidation() {
+        // Card number input with auto-formatting
         etCardNumber.addTextChangedListener(new TextWatcher() {
             private boolean isFormatting;
 
@@ -127,14 +144,12 @@ public class CardDetailsActivity extends AppCompatActivity {
                 if (isFormatting) return;
                 isFormatting = true;
 
-                // Keep track of cursor position
                 int selectionStart = etCardNumber.getSelectionStart();
-
                 String digitsOnly = s.toString().replaceAll("\\D", "");
                 StringBuilder formatted = new StringBuilder();
 
+                // Format based on card type (AmEx uses 4-4-4-3, others use 4-4-4-4)
                 if ("AmericanExpress".equals(cardType)) {
-                    // Desired grouping: 4-4-4-3 (total 15 digits)
                     int[] groups = {4, 4, 4, 3};
                     int index = 0;
                     for (int g = 0; g < groups.length && index < digitsOnly.length(); g++) {
@@ -144,28 +159,22 @@ public class CardDetailsActivity extends AppCompatActivity {
                         if (index < digitsOnly.length()) formatted.append("-");
                     }
                 } else {
-                    // Standard grouping: 4-4-4-4 (for up to 16 digits)
                     for (int i = 0; i < digitsOnly.length(); i++) {
                         if (i > 0 && i % 4 == 0) formatted.append("-");
                         formatted.append(digitsOnly.charAt(i));
                     }
                 }
 
-                // update text and restore cursor as close as possible
                 String formattedStr = formatted.toString();
                 s.replace(0, s.length(), formattedStr);
 
-                // Simple cursor correction: place cursor at end or original relative position
+                // Restore cursor position after formatting
                 int newPos = selectionStart;
-
-                // If cursor was after a digit that became a hyphen, move it forward
                 if (selectionStart > 0 && !formattedStr.isEmpty()) {
-                    // Count digits before old selection
                     int digitsBefore = 0;
                     for (int i = 0; i < Math.min(selectionStart, s.length()); i++) {
                         if (Character.isDigit(s.charAt(i))) digitsBefore++;
                     }
-                    // Now compute new cursor position by scanning formattedStr
                     int pos = 0;
                     int digitsSeen = 0;
                     while (pos < formattedStr.length() && digitsSeen < digitsBefore) {
@@ -183,6 +192,7 @@ public class CardDetailsActivity extends AppCompatActivity {
             }
         });
 
+        // Expiry month validation - auto-focus to year after valid input
         etExpiryMonth.addTextChangedListener(new TextWatcher() {
             @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override public void onTextChanged(CharSequence s, int start, int before, int count) { clearExpiryError(); }
@@ -202,21 +212,27 @@ public class CardDetailsActivity extends AppCompatActivity {
             }
         });
 
+        // Expiry year validation
         etExpiryYear.addTextChangedListener(new TextWatcher() {
             @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override public void onTextChanged(CharSequence s, int start, int before, int count) { clearExpiryError(); }
             @Override public void afterTextChanged(Editable s) {}
         });
 
+        // CVV validation
         etCvv.addTextChangedListener(new TextWatcher() {
             @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override public void onTextChanged(CharSequence s, int start, int before, int count) { clearCvvError(); }
             @Override public void afterTextChanged(Editable s) {}
         });
 
+        // Set CVV as password type (dots instead of numbers)
         etCvv.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_PASSWORD);
     }
 
+    /**
+     * Setup click listeners for interactive elements
+     */
     private void setupClickListeners() {
         backButton.setOnClickListener(v -> finish());
 
@@ -227,6 +243,10 @@ public class CardDetailsActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Validate all input fields before processing payment
+     * Returns true if all validations pass, false otherwise
+     */
     private boolean validateInputs() {
         boolean isValid = true;
 
@@ -235,7 +255,7 @@ public class CardDetailsActivity extends AppCompatActivity {
         String year = etExpiryYear.getText().toString();
         String cvv = etCvv.getText().toString();
 
-        // Validate card number
+        // Validate card number length
         if (cardNumber.isEmpty()) {
             showCardNumberError(getString(R.string.error_card_number_required));
             isValid = false;
@@ -247,7 +267,7 @@ public class CardDetailsActivity extends AppCompatActivity {
             }
         }
 
-        // Validate expiry
+        // Validate expiry date
         if (month.isEmpty() || year.isEmpty()) {
             showExpiryError(getString(R.string.error_expiry_required));
             isValid = false;
@@ -264,7 +284,7 @@ public class CardDetailsActivity extends AppCompatActivity {
             }
         }
 
-        // Validate CVV
+        // Validate CVV length
         if (cvv.isEmpty()) {
             showCvvError(getString(R.string.error_cvv_required));
             isValid = false;
@@ -279,39 +299,63 @@ public class CardDetailsActivity extends AppCompatActivity {
         return isValid;
     }
 
+    /**
+     * Display error message for card number field and hide helper text
+     */
     private void showCardNumberError(String error) {
         etCardNumber.setBackground(ContextCompat.getDrawable(this, R.drawable.input_field_error_bg));
+        helperCardDigits.setVisibility(TextView.GONE);
         errorCardNumber.setText(error);
         errorCardNumber.setVisibility(TextView.VISIBLE);
     }
 
+    /**
+     * Clear error state from card number field and show helper text
+     */
     private void clearCardNumberError() {
         etCardNumber.setBackground(ContextCompat.getDrawable(this, R.drawable.input_field_bg));
         errorCardNumber.setVisibility(TextView.GONE);
+        helperCardDigits.setVisibility(TextView.VISIBLE);
     }
 
+    /**
+     * Display error message for expiry date fields and hide helper text
+     */
     private void showExpiryError(String error) {
         etExpiryMonth.setBackground(ContextCompat.getDrawable(this, R.drawable.input_field_error_bg));
         etExpiryYear.setBackground(ContextCompat.getDrawable(this, R.drawable.input_field_error_bg));
+        helperExpiry.setVisibility(TextView.GONE);
         errorExpiry.setText(error);
         errorExpiry.setVisibility(TextView.VISIBLE);
     }
 
+    /**
+     * Clear error state from expiry date fields and show helper text
+     */
     private void clearExpiryError() {
         etExpiryMonth.setBackground(ContextCompat.getDrawable(this, R.drawable.input_field_bg));
         etExpiryYear.setBackground(ContextCompat.getDrawable(this, R.drawable.input_field_bg));
         errorExpiry.setVisibility(TextView.GONE);
+        helperExpiry.setVisibility(TextView.VISIBLE);
     }
 
+    /**
+     * Display error message for CVV field and hide helper text
+     */
     private void showCvvError(String error) {
         etCvv.setBackground(ContextCompat.getDrawable(this, R.drawable.input_field_error_bg));
+        helperCvvDigits.setVisibility(TextView.GONE);
         errorCvv.setText(error);
         errorCvv.setVisibility(TextView.VISIBLE);
     }
 
+    /**
+     * Clear error state from CVV field and show helper text
+     */
     private void clearCvvError() {
         etCvv.setBackground(ContextCompat.getDrawable(this, R.drawable.input_field_bg));
         errorCvv.setVisibility(TextView.GONE);
+        helperCvvDigits.setVisibility(TextView.VISIBLE);
     }
 
     private void processCashIn() {

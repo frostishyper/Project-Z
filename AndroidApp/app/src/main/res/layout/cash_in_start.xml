@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Root Container -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000">
 
-
+    <!-- Mother Container -->
     <RelativeLayout
         android:id="@+id/mother_container"
         android:layout_width="match_parent"
@@ -14,18 +15,18 @@
         android:layout_marginTop="37dp"
         android:layout_marginEnd="20dp">
 
-
+        <!-- Back Button -->
         <ImageView
-            android:id="@+id/back_button"
+            android:id="@+id/ico_back"
             android:layout_width="45dp"
             android:layout_height="55dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="10dp"
-            android:contentDescription="Back"
-            android:src="@drawable/back_button"
-            app:tint="#CCCCCC" />
+            android:contentDescription="@string/desc_ico_back"
+            android:src="@drawable/ico_back"
+            app:tint="@color/color_icon_tint" />
 
-
+        <!-- Title: Cash In -->
         <TextView
             android:id="@+id/title_cash_in"
             android:layout_width="wrap_content"
@@ -34,12 +35,12 @@
             android:layout_marginTop="81dp"
             android:fontFamily="@font/inter_medium"
             android:gravity="center"
-            android:text="Cash in"
-            android:textColor="#FFFFFF"
+            android:text="@string/title_cash_in"
+            android:textColor="@color/color_text_white"
             android:textSize="24sp"
             android:textStyle="bold" />
 
-
+        <!-- Subtitle: Our Partners -->
         <TextView
             android:id="@+id/subtitle_partners"
             android:layout_width="wrap_content"
@@ -49,12 +50,12 @@
             android:layout_marginTop="24dp"
             android:fontFamily="@font/inter_medium"
             android:gravity="center"
-            android:text="Our Partners"
-            android:textColor="#CCCCCC"
+            android:text="@string/subtitle_partners"
+            android:textColor="@color/color_text_white"
             android:textSize="16sp"
             android:textStyle="bold" />
 
-
+        <!-- Partners Container -->
         <LinearLayout
             android:id="@+id/partners_container"
             android:layout_width="match_parent"
@@ -67,7 +68,7 @@
             android:orientation="vertical"
             android:padding="5dp">
 
-
+            <!-- Partner Card 1: Visa -->
             <LinearLayout
                 android:id="@+id/partner_visa"
                 android:layout_width="match_parent"
@@ -79,6 +80,7 @@
                 android:orientation="horizontal"
                 android:padding="5dp">
 
+                <!-- Visa Logo -->
                 <ImageView
                     android:id="@+id/logo_visa"
                     android:layout_width="70dp"
@@ -88,6 +90,7 @@
                     android:padding="5dp"
                     android:src="@drawable/visa_logo" />
 
+                <!-- Visa Name -->
                 <TextView
                     android:id="@+id/name_visa"
                     android:layout_width="0dp"
@@ -98,9 +101,10 @@
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
                     android:text="Visa"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/color_text_white"
                     android:textSize="14sp" />
 
+                <!-- Arrow Icon -->
                 <ImageView
                     android:id="@+id/arrow_visa"
                     android:layout_width="51dp"
@@ -110,7 +114,7 @@
                     android:src="@drawable/chevron_right" />
             </LinearLayout>
 
-
+            <!-- Divider -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -118,7 +122,7 @@
                 android:layout_marginEnd="5dp"
                 android:background="#333333" />
 
-
+            <!-- Partner Card 2: MasterCard -->
             <LinearLayout
                 android:id="@+id/partner_mastercard"
                 android:layout_width="match_parent"
@@ -130,6 +134,7 @@
                 android:orientation="horizontal"
                 android:padding="5dp">
 
+                <!-- MasterCard Logo -->
                 <ImageView
                     android:id="@+id/logo_mastercard"
                     android:layout_width="70dp"
@@ -139,6 +144,7 @@
                     android:padding="5dp"
                     android:src="@drawable/mastercard_logo" />
 
+                <!-- MasterCard Name -->
                 <TextView
                     android:id="@+id/name_mastercard"
                     android:layout_width="0dp"
@@ -149,9 +155,10 @@
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
                     android:text="MasterCard"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/color_text_white"
                     android:textSize="14sp" />
 
+                <!-- Arrow Icon -->
                 <ImageView
                     android:id="@+id/arrow_mastercard"
                     android:layout_width="51dp"
@@ -161,7 +168,7 @@
                     android:src="@drawable/chevron_right" />
             </LinearLayout>
 
-
+            <!-- Divider -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -169,7 +176,7 @@
                 android:layout_marginEnd="5dp"
                 android:background="#333333" />
 
-
+            <!-- Partner Card 3: American Express -->
             <LinearLayout
                 android:id="@+id/partner_amex"
                 android:layout_width="match_parent"
@@ -181,6 +188,7 @@
                 android:orientation="horizontal"
                 android:padding="5dp">
 
+                <!-- AmEx Logo -->
                 <ImageView
                     android:id="@+id/logo_amex"
                     android:layout_width="70dp"
@@ -190,6 +198,7 @@
                     android:padding="5dp"
                     android:src="@drawable/amex_logo" />
 
+                <!-- AmEx Name -->
                 <TextView
                     android:id="@+id/name_amex"
                     android:layout_width="0dp"
@@ -200,9 +209,10 @@
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
                     android:text="American Express"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/color_text_white"
                     android:textSize="14sp" />
 
+                <!-- Arrow Icon -->
                 <ImageView
                     android:id="@+id/arrow_amex"
                     android:layout_width="51dp"
@@ -212,7 +222,7 @@
                     android:src="@drawable/chevron_right" />
             </LinearLayout>
 
-
+            <!-- Divider -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -220,7 +230,7 @@
                 android:layout_marginEnd="5dp"
                 android:background="#333333" />
 
-
+            <!-- Partner Card 4: Japan Credit Bureau -->
             <LinearLayout
                 android:id="@+id/partner_jcb"
                 android:layout_width="match_parent"
@@ -232,6 +242,7 @@
                 android:orientation="horizontal"
                 android:padding="5dp">
 
+                <!-- JCB Logo -->
                 <ImageView
                     android:id="@+id/logo_jcb"
                     android:layout_width="70dp"
@@ -241,6 +252,7 @@
                     android:padding="5dp"
                     android:src="@drawable/jcb_logo" />
 
+                <!-- JCB Name -->
                 <TextView
                     android:id="@+id/name_jcb"
                     android:layout_width="0dp"
@@ -251,9 +263,10 @@
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
                     android:text="Japan Credit Bureau"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/color_text_white"
                     android:textSize="14sp" />
 
+                <!-- Arrow Icon -->
                 <ImageView
                     android:id="@+id/arrow_jcb"
                     android:layout_width="51dp"
@@ -263,7 +276,7 @@
                     android:src="@drawable/chevron_right" />
             </LinearLayout>
 
-
+            <!-- Divider -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -271,7 +284,7 @@
                 android:layout_marginEnd="5dp"
                 android:background="#333333" />
 
-
+            <!-- Partner Card 5: Discover -->
             <LinearLayout
                 android:id="@+id/partner_discover"
                 android:layout_width="match_parent"
@@ -283,6 +296,7 @@
                 android:orientation="horizontal"
                 android:padding="5dp">
 
+                <!-- Discover Logo -->
                 <ImageView
                     android:id="@+id/logo_discover"
                     android:layout_width="70dp"
@@ -292,6 +306,7 @@
                     android:padding="5dp"
                     android:src="@drawable/discover_logo" />
 
+                <!-- Discover Name -->
                 <TextView
                     android:id="@+id/name_discover"
                     android:layout_width="0dp"
@@ -302,9 +317,10 @@
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
                     android:text="Discover"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/color_text_white"
                     android:textSize="14sp" />
 
+                <!-- Arrow Icon -->
                 <ImageView
                     android:id="@+id/arrow_discover"
                     android:layout_width="51dp"
@@ -316,7 +332,7 @@
 
         </LinearLayout>
 
-
+        <!-- Bottom Logo -->
         <ImageView
             android:id="@+id/blackshores_logo"
             android:layout_width="match_parent"

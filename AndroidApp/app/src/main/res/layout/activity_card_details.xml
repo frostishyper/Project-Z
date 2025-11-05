@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0A0A0A"
@@ -16,22 +15,20 @@
         android:layout_marginEnd="20dp"
         android:padding="10dp">
 
-        <!-- Back Button -->
         <ImageView
-            android:id="@+id/back_button"
+            android:id="@+id/ico_back"
             android:layout_width="50dp"
             android:layout_height="38dp"
             android:layout_marginTop="20dp"
-            android:contentDescription="@string/desc_back_button"
-            android:src="@drawable/back_button"
+            android:contentDescription="@string/desc_ico_back"
+            android:src="@drawable/ico_back"
             app:tint="#CCCCCC" />
 
-        <!-- Card Header -->
         <LinearLayout
             android:id="@+id/card_header_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/back_button"
+            android:layout_below="@id/ico_back"
             android:layout_marginTop="40dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
@@ -60,7 +57,6 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <!-- Card Number -->
         <LinearLayout
             android:id="@+id/card_number_container"
             android:layout_width="match_parent"
@@ -84,12 +80,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/input_field_bg"
+                android:digits="0123456789-"
                 android:fontFamily="@font/inter_medium"
                 android:inputType="text"
-                android:digits="0123456789-"
                 android:maxLength="19"
-                android:paddingVertical="12dp"
                 android:paddingHorizontal="18dp"
+                android:paddingVertical="12dp"
                 android:textColor="#FFFFFF"
                 android:textColorHint="#CCCCCC"
                 android:textSize="20sp" />
@@ -116,7 +112,6 @@
                 android:textSize="16sp" />
         </LinearLayout>
 
-        <!-- Expiry Date -->
         <LinearLayout
             android:id="@+id/expiry_container"
             android:layout_width="match_parent"
@@ -193,7 +188,6 @@
                 android:textSize="16sp" />
         </LinearLayout>
 
-        <!-- CVV -->
         <LinearLayout
             android:id="@+id/cvv_container"
             android:layout_width="match_parent"
@@ -247,22 +241,20 @@
                 android:textSize="16sp" />
         </LinearLayout>
 
-        <!-- Button -->
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_cash_in"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="48dp"
             android:layout_below="@id/cvv_container"
             android:layout_marginTop="40dp"
-            android:background="@drawable/button_logout_bg"
+            android:background="@drawable/general_button"
             android:backgroundTint="@null"
             android:fontFamily="@font/inter_medium"
             android:text="@string/button_cash_in"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
-            android:textSize="19sp" />
+            android:textSize="13sp" />
 
-        <!-- Logo -->
         <ImageView
             android:id="@+id/blackshores_logo"
             android:layout_width="50dp"
