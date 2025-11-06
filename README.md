@@ -1,64 +1,102 @@
-# 📱 Project-Z (Temporary Name)
+<h1 align="center">🔷 Black Shores Bank 🔷</h1>
 
-Project-Z is a Mobile Social Media App Similar To Reddit Where People Could Form Communities, Discuss Similar Interest And Help Each Other Grow Together Online.
+<p align="center">
+ <img src="https://media1.tenor.com/m/utgzYc84lmAAAAAd/wuthering-waves-wuthering.gif" width="1100px"> 
+</p>
 
----
-
-<img src="https://media1.tenor.com/m/pCATjnGh8XoAAAAd/reddit-gold-slot-machine.gif" width="700px"> 
-
----
-
-## ✨ Features
-- 🖼️ Posting Images/Videos/Etc (WIP)
-- 💬 Likes/Reactions/Comments (WIP)
-- 🌟 Point System (WIP)
-- 👤 Customizable User Avatars & Profiles (WIP)
-- 👥 Communities (WIP)
-- ✉️ Private Messages (WIP)
+<p align="center">
+  A mobile E-Wallet and banking app built with <b>Android (Java)</b>, <b>Node/Express</b>, and <b>MySQL</b>.<br>
+  Supports wallet transfers, e-payments, and digital purchases — inspired by apps like GCash, Maya, and CashApp.
+</p>
 
 
----
+## 🚀 Features
+- 💸 Transfer money to other users
+- 🛒 Make digital purchases and payments (sim)
+- 💳 Digital Card (sim)
+- 🎲 Gamba! (sim)
+- 🔒 login and transaction authentication  
+- 📱 Built for Android SDK 24+ (target 36)  
+- ☁️ Node/Express backend with MySQL database  
 
-## 🚀 Getting Started
+## 🧱 Tech Stack
+<table>
+  <tr>
+    <td align="center">
+      <h3>🎨 Design</h3>
+      <a href="https://skillicons.dev">
+        <img src="https://skillicons.dev/icons?i=figma&theme=light&size=60" />
+      </a>
+    </td>
+    <td align="center">
+      <h3>🧰 IDEs</h3>
+      <a href="https://skillicons.dev">
+        <img src="https://skillicons.dev/icons?i=androidstudio,vscode&theme=light&size=60" />
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <h3>💻 Languages</h3>
+      <a href="https://skillicons.dev">
+        <img src="https://skillicons.dev/icons?i=java,javascript&theme=light&size=60" />
+      </a>
+    </td>
+    <td align="center">
+      <h3>📦 Misc</h3>
+      <a href="https://skillicons.dev">
+         <img src="https://skillicons.dev/icons?i=npm,nodejs,express&theme=light&size=60" />
+      </a>
+    </td>
+  </tr>
+</table>
 
-### Prerequisites
-- [Visual Studio Code (1.104.3 or Newer)](https://code.visualstudio.com/download)
-- [Android Studio (2025.1.3.7)](https://developer.android.com/studio)
-- [Git (2.51.0)](https://git-scm.com/downloads)
-- [Node (22.20.0) LTS](https://nodejs.org/en/download)
+## 🧩 Project Structure
+```
+BlackShoresBank/
+ ├── AndroidApp/            # Android source code
+ ├── Backed/                # Node/Express backend
+ ├── DB/                # SQL schema and migrations
+ └── README.md
+```
 
-### Installation
-1. Clone this repository:
+
+## 🛠️ Setup & Run
+
+### 🖥️ Backend (Node/Express)
+
+```bash
+cd Backend
+npm install
+npm index.js
+```
+
+### 📱 Android App
+1. Open `/AndroidApp` in **Android Studio**  
+2. Configure API URL in `config.java`  
+3. Build and run on emulator or device (SDK 24+)
+
+
+## 🤝 Contributing
+1. Fork the repo  
+2. Create your feature branch  
    ```bash
-   git clone https://github.com/frostishyper/Project-Z.git
+   git checkout -b feat/awesome-feature
+   ```
+3. Commit your changes  
+   ```bash
+   git commit -m "Add awesome feature"
+   ```
+4. Push to your branch and open a Pull Request to `dev`
 
-2. Open Root Folder In VScode For Git Tracking, Backend Development, Android App Code Editing
-  
-3. Open (/AndroidApp) In Android Studio
-
-4. DONE
-   
-## 📂 Repository Structure
- ```bash
-AndroidApp/          # Android Studio Project/Android App
-Backend/             # Node/Expresss Backend
-.gitignore           # Ignore rules for Git
- ```
-## 🤝 Contributing 
-
-Contributions, feedback, and suggestions are welcome!
-Feel free to fork this repo and submit a pull request, or open an issue if you spot a bug.
 
 ## 📜 License
-
 This project is licensed under the MIT License
 
-## 👥 The Team
+## 🖋️ Author
 
 - 🎨 Design & UI/UX - [![GitHub](https://img.shields.io/badge/GitHub-frostishyper-181717?style=flat&logo=github)](https://github.com/frostishyper) 
 - 💻 Backend Code (Node/Express) - [![GitHub](https://img.shields.io/badge/GitHub-frostishyper-181717?style=flat&logo=github)](https://github.com/frostishyper) 
 - 📱 Mobile App Code (Java/Android Studio) - [![GitHub](https://img.shields.io/badge/GitHub-frostishyper-181717?style=flat&logo=github)](https://github.com/frostishyper) 
-
-  
 
 
