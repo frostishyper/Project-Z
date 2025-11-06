@@ -17,10 +17,6 @@
         android:theme="@style/Theme.BlackShoresBank">
 
         <activity
-            android:name=".CardDetailsActivity"
-            android:exported="false" />
-
-        <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
@@ -33,6 +29,8 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".ProfileActivity" />
+        <activity android:name=".CashInActivity" />
+        <activity android:name=".CardCashInActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CardFormScreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0A0A"
+    tools:context=".CardCashInActivity">
+
+    <ScrollView
+        android:id="@+id/CardScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Form Container -->
+        <LinearLayout
+            android:id="@+id/CardFormContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="37dp"
+            android:padding="10dp">
+
+            <!-- Back Button -->
+            <ImageView
+                android:id="@+id/BackBtn"
+                android:layout_width="45dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ico_back"/>
+
+            <!-- Card Header -->
+            <LinearLayout
+                android:id="@+id/CardHeaderContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/CardLogo"
+                    android:layout_width="70dp"
+                    android:layout_height="51dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/mastercard_logo"
+                    android:contentDescription="@string/desc_logo_mastercard" />
+
+                <TextView
+                    android:id="@+id/CardTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/card_mastercard"
+                    android:textColor="#FFFFFF"
+                    android:textSize="28sp"
+                    android:gravity="center_vertical" />
+            </LinearLayout>
+
+            <!-- Card Number Section -->
+            <LinearLayout
+                android:id="@+id/CardNumberContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="40dp">
+
+                <TextView
+                    android:id="@+id/CardNumberLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_card_number"
+                    android:textColor="#D1D5DB"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/inter_medium" />
+
+                <EditText
+                    android:id="@+id/CardNumberInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/input_field_bg"
+
+                    android:fontFamily="@font/inter"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#CCCCCC"
+                    android:textSize="15sp"
+                    android:paddingHorizontal="16dp"
+                    android:inputType="number"
+                    android:digits="0123456789-"
+                    android:maxLength="19" />
+
+                <TextView
+                    android:id="@+id/CardNumberError"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/error_invalid_card_number"
+                    android:textColor="#C62828"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_marginTop="6dp"
+                    android:visibility="gone" />
+
+                <!-- Helper (kept visible by default, change to gone if you prefer) -->
+                <TextView
+                    android:id="@+id/CardNumberHelper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/helper_card_digits"
+                    android:textColor="#9CA3AF"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/inter"
+                    android:layout_marginTop="6dp" />
+            </LinearLayout>
+
+            <!-- Expiry Section -->
+            <LinearLayout
+                android:id="@+id/ExpiryContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="32dp">
+
+                <TextView
+                    android:id="@+id/ExpiryLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_expiry_date"
+                    android:textColor="#D1D5DB"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/inter_medium" />
+
+                <LinearLayout
+                    android:id="@+id/ExpiryInputRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <EditText
+                        android:id="@+id/ExpiryMonthInput"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/input_field_bg"
+                        android:hint="@string/hint_expiry_month"
+                        android:gravity="center"
+                        android:fontFamily="@font/inter"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#CCCCCC"
+                        android:textSize="15sp"
+                        android:inputType="number"
+                        android:maxLength="2" />
+
+                    <Space
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content" />
+
+                    <EditText
+                        android:id="@+id/ExpiryYearInput"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/input_field_bg"
+                        android:hint="@string/hint_expiry_year"
+                        android:gravity="center"
+                        android:fontFamily="@font/inter"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#CCCCCC"
+                        android:textSize="15sp"
+                        android:inputType="number"
+                        android:maxLength="2" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/ExpiryError"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/error_invalid_expiry"
+                    android:textColor="#C62828"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_marginTop="6dp"
+                    android:visibility="gone" />
+
+                <!-- Helper -->
+                <TextView
+                    android:id="@+id/ExpiryHelper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/helper_expiry"
+                    android:textColor="#9CA3AF"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/inter"
+                    android:layout_marginTop="6dp" />
+            </LinearLayout>
+
+            <!-- CVV Section -->
+            <LinearLayout
+                android:id="@+id/CvvContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="32dp">
+
+                <TextView
+                    android:id="@+id/CvvLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_cvv"
+                    android:textColor="#D1D5DB"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/inter_medium" />
+
+                <EditText
+                    android:id="@+id/CvvInput"
+                    android:layout_width="125dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/input_field_bg"
+                    android:gravity="center"
+                    android:fontFamily="@font/inter"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#CCCCCC"
+                    android:textSize="15sp"
+                    android:inputType="numberPassword"
+                    android:maxLength="4" />
+
+                <TextView
+                    android:id="@+id/CvvError"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/error_invalid_cvv"
+                    android:textColor="#C62828"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_marginTop="6dp"
+                    android:visibility="gone" />
+
+                <!-- Helper -->
+                <TextView
+                    android:id="@+id/CvvHelper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/helper_cvv_digits"
+                    android:textColor="#9CA3AF"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/inter"
+                    android:layout_marginTop="6dp" />
+            </LinearLayout>
+
+
+            <!-- Action Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/CashInBtn"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/general_button"
+                android:text="@string/button_cash_in"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:stateListAnimator="@null" />
+
+            <!-- Brand Logo -->
+            <ImageView
+                android:id="@+id/BlackShoresLogo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/blackshoreslogo"
+                android:contentDescription="@string/desc_logo_blackshores" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -60,41 +60,40 @@ CREATE TABLE Merchants (
 CREATE TABLE Transactions (
     Transaction_ID INT AUTO_INCREMENT PRIMARY KEY,
     Reference_ID VARCHAR(13) NOT NULL UNIQUE,
-    
-    isTransfer BOOLEAN NOT NULL DEFAULT FALSE,
-    isPurchase BOOLEAN NOT NULL DEFAULT FALSE,
-    
-    Sender_Number VARCHAR(15),
-    Recipient_Number VARCHAR(15),
-    Merchant_Name VARCHAR(100),
-    
-    Fee DECIMAL(15,2) DEFAULT 0.00,
+
+    -- Transaction actors
+    Sender_Type ENUM('USER', 'MERCHANT') NOT NULL,
+    Recipient_Type ENUM('USER', 'MERCHANT') NOT NULL,
+
+    -- Optional depending on type
+    Sender_Number VARCHAR(15) NULL,
+    Recipient_Number VARCHAR(15) NULL,
+    Merchant_Name VARCHAR(100) NULL,
+
+    -- Financials
     Amount DECIMAL(15,2) NOT NULL,
+    Fee DECIMAL(15,2) DEFAULT 0.00,
+    Note VARCHAR(50),
     Created_At DATETIME DEFAULT CURRENT_TIMESTAMP,
-    
+
+    -- Foreign keys
     CONSTRAINT fk_sender
         FOREIGN KEY (Sender_Number)
         REFERENCES Accounts(Account_Number)
         ON DELETE SET NULL
         ON UPDATE CASCADE,
-        
+
     CONSTRAINT fk_recipient
         FOREIGN KEY (Recipient_Number)
         REFERENCES Accounts(Account_Number)
         ON DELETE SET NULL
         ON UPDATE CASCADE,
-        
+
     CONSTRAINT fk_merchant
         FOREIGN KEY (Merchant_Name)
         REFERENCES Merchants(Merchant_Name)
         ON DELETE SET NULL
-        ON UPDATE CASCADE,
-        
-    CONSTRAINT chk_transaction_type
-        CHECK (
-            (isTransfer = TRUE AND isPurchase = FALSE)
-            OR (isTransfer = FALSE AND isPurchase = TRUE)
-        )
+        ON UPDATE CASCADE
 );
 
 <------------------------------------------------------------------------------------------------>

@@ -55,7 +55,7 @@
 ```
 BlackShoresBank/
  ├── AndroidApp/            # Android source code
- ├── Backed/                # Node/Express backend
+ ├── Backend/                # Node/Express backend
  ├── DB/                # SQL schema and migrations
  └── README.md
 ```

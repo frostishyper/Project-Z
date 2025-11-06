@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_cash_in_partners"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000000"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:paddingTop="37dp">
+
+    <!-- Row: Back button only (left-aligned) -->
+    <LinearLayout
+        android:id="@+id/layout_back_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/button_back"
+            android:layout_width="45dp"
+            android:layout_height="55dp"
+            android:contentDescription="@string/desc_back_button"
+            android:src="@drawable/back_button"
+            app:tint="#CCCCCC" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <!-- Title BELOW the back button, matching original spacing -->
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="81dp"
+        android:fontFamily="@font/inter_medium"
+        android:text="@string/title_cash_in"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <!-- Subtitle: LEFT-ALIGNED as requested (not centered) -->
+    <TextView
+        android:id="@+id/text_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/inter_medium"
+        android:text="@string/subtitle_partners"
+        android:textColor="#CCCCCC"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:gravity="start" />
+
+    <!-- Partners List -->
+    <LinearLayout
+        android:id="@+id/layout_partners"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:background="@drawable/partners_container_bg"
+        android:padding="5dp">
+
+        <!-- Visa -->
+        <LinearLayout
+            android:id="@+id/item_partner_visa"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/image_visa_logo"
+                android:layout_width="70dp"
+                android:layout_height="51dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@string/desc_logo_visa"
+                android:padding="5dp"
+                android:src="@drawable/visa_logo" />
+
+            <TextView
+                android:id="@+id/text_visa_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/partner_visa"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/image_visa_arrow"
+                android:layout_width="51dp"
+                android:layout_height="51dp"
+                android:contentDescription="@string/desc_arrow"
+                android:padding="5dp"
+                android:src="@drawable/chevron_right" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="#333333" />
+
+        <!-- MasterCard -->
+        <LinearLayout
+            android:id="@+id/item_partner_mastercard"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/image_mastercard_logo"
+                android:layout_width="70dp"
+                android:layout_height="51dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@string/desc_logo_mastercard"
+                android:padding="5dp"
+                android:src="@drawable/mastercard_logo" />
+
+            <TextView
+                android:id="@+id/text_mastercard_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/partner_mastercard"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/image_mastercard_arrow"
+                android:layout_width="51dp"
+                android:layout_height="51dp"
+                android:contentDescription="@string/desc_arrow"
+                android:padding="5dp"
+                android:src="@drawable/chevron_right" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="#333333" />
+
+        <!-- American Express -->
+        <LinearLayout
+            android:id="@+id/item_partner_amex"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/image_amex_logo"
+                android:layout_width="70dp"
+                android:layout_height="51dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@string/desc_logo_amex"
+                android:padding="5dp"
+                android:src="@drawable/amex_logo" />
+
+            <TextView
+                android:id="@+id/text_amex_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/partner_amex"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/image_amex_arrow"
+                android:layout_width="51dp"
+                android:layout_height="51dp"
+                android:contentDescription="@string/desc_arrow"
+                android:padding="5dp"
+                android:src="@drawable/chevron_right" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="#333333" />
+
+        <!-- JCB -->
+        <LinearLayout
+            android:id="@+id/item_partner_jcb"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/image_jcb_logo"
+                android:layout_width="70dp"
+                android:layout_height="51dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@string/desc_logo_jcb"
+                android:padding="5dp"
+                android:src="@drawable/jcb_logo" />
+
+            <TextView
+                android:id="@+id/text_jcb_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/partner_jcb"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/image_jcb_arrow"
+                android:layout_width="51dp"
+                android:layout_height="51dp"
+                android:contentDescription="@string/desc_arrow"
+                android:padding="5dp"
+                android:src="@drawable/chevron_right" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="#333333" />
+
+        <!-- Discover -->
+        <LinearLayout
+            android:id="@+id/item_partner_discover"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/image_discover_logo"
+                android:layout_width="70dp"
+                android:layout_height="51dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@string/desc_logo_discover"
+                android:padding="5dp"
+                android:src="@drawable/discover_logo" />
+
+            <TextView
+                android:id="@+id/text_discover_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/partner_discover"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/image_discover_arrow"
+                android:layout_width="51dp"
+                android:layout_height="51dp"
+                android:contentDescription="@string/desc_arrow"
+                android:padding="5dp"
+                android:src="@drawable/chevron_right" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Footer Logo -->
+    <ImageView
+        android:id="@+id/image_blackshores_logo"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/desc_logo_blackshores"
+        android:padding="5dp"
+        android:src="@drawable/blackshoreslogo" />
+
+</LinearLayout>

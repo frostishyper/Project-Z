@@ -42,7 +42,7 @@ const jwt = require('jsonwebtoken');
 const db = require('./Config/Connector');
 const RegisterRoute = require('./Routes/Register');
 const LoginRoute = require('./Routes/Login');
-
+const WalletRoute = require('./Routes/Wallet');
 
 //  =====================================
 //  Server Launch Procedures
@@ -57,6 +57,7 @@ app.use(express.json());
 //  =====================================
 app.use('/api/register', RegisterRoute);
 app.use('/api/login', LoginRoute);
+app.use('/api/wallet', WalletRoute);
 
 
 
