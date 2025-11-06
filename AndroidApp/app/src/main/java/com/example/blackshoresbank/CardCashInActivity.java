@@ -8,19 +8,30 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.ContextCompat;
+import android.app.ProgressDialog;
+import android.widget.Toast;
 
-public class CardCashInActivity extends AppCompatActivity {
+// Networking Imports
+import com.example.blackshoresbank.models.CardCashInRequest;
+import com.example.blackshoresbank.models.CardCashInResponse;
+import com.example.blackshoresbank.network.ApiService;
+import com.example.blackshoresbank.network.RetrofitClient;
+import com.example.blackshoresbank.utils.TokenManager;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class CardCashInActivity extends BaseActivity {
 
     private String cardType;
     private ImageView backButton, cardLogo;
     private TextView CardTitle;
 
-    private EditText cardNumberInput, expiryMonthInput, expiryYearInput, cvvInput;
-    private TextView cardNumberHelper, expiryHelper, cvvHelper;
-    private TextView cardNumberError, expiryError, cvvError;
+    private EditText cardNumberInput, expiryMonthInput, expiryYearInput, cvvInput, cashInAmountInput;
+    private TextView cardNumberHelper, expiryHelper, cvvHelper, cashInAmountHelper;
+    private TextView cardNumberError, expiryError, cvvError, cashInAmountError;
 
     private AppCompatButton cashInButton;
 
@@ -34,6 +45,7 @@ public class CardCashInActivity extends AppCompatActivity {
         setupCardType();
         setupInputValidation();
         setupListeners();
+        updateButtonState();
     }
 
     private void initViews() {
@@ -45,14 +57,17 @@ public class CardCashInActivity extends AppCompatActivity {
         expiryMonthInput = findViewById(R.id.ExpiryMonthInput);
         expiryYearInput = findViewById(R.id.ExpiryYearInput);
         cvvInput = findViewById(R.id.CvvInput);
+        cashInAmountInput = findViewById(R.id.CashInAmountInput);
 
         cardNumberHelper = findViewById(R.id.CardNumberHelper);
         expiryHelper = findViewById(R.id.ExpiryHelper);
         cvvHelper = findViewById(R.id.CvvHelper);
+        cashInAmountHelper = findViewById(R.id.CashInAmountHelper);
 
         cardNumberError = findViewById(R.id.CardNumberError);
         expiryError = findViewById(R.id.ExpiryError);
         cvvError = findViewById(R.id.CvvError);
+        cashInAmountError = findViewById(R.id.CashInAmmountError);
 
         cashInButton = findViewById(R.id.CashInBtn);
     }
@@ -87,13 +102,14 @@ public class CardCashInActivity extends AppCompatActivity {
     }
 
     private void setupInputValidation() {
-        // Auto-format card number
+        // --- Card Number Formatting ---
         cardNumberInput.addTextChangedListener(new TextWatcher() {
             private boolean isFormatting;
 
             @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
                 clearCardNumberError();
+                updateButtonState();
             }
             @Override
             public void afterTextChanged(Editable s) {
@@ -128,41 +144,45 @@ public class CardCashInActivity extends AppCompatActivity {
             }
         });
 
-        // Expiry month
-        expiryMonthInput.addTextChangedListener(new TextWatcher() {
+        // --- Expiry Fields ---
+        expiryMonthInput.addTextChangedListener(new SimpleTextWatcher(() -> {
+            clearExpiryError();
+            updateButtonState();
+        }));
+
+        expiryYearInput.addTextChangedListener(new SimpleTextWatcher(() -> {
+            clearExpiryError();
+            updateButtonState();
+        }));
+
+        // --- CVV ---
+        cvvInput.addTextChangedListener(new SimpleTextWatcher(() -> {
+            clearCvvError();
+            updateButtonState();
+        }));
+
+        cvvInput.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_PASSWORD);
+
+        // --- Cash In Amount ---
+        cashInAmountInput.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+        cashInAmountInput.addTextChangedListener(new TextWatcher() {
             @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-            @Override public void onTextChanged(CharSequence s, int start, int before, int count) { clearExpiryError(); }
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
+                clearCashInAmountError();
+                updateButtonState();
+            }
             @Override public void afterTextChanged(Editable s) {
-                if (s.length() == 2) {
-                    try {
-                        int m = Integer.parseInt(s.toString());
-                        if (m < 1 || m > 12) {
-                            showExpiryError(getString(R.string.error_invalid_month));
-                        } else {
-                            expiryYearInput.requestFocus();
-                        }
-                    } catch (NumberFormatException e) {
-                        showExpiryError(getString(R.string.error_invalid_month));
+                String input = s.toString();
+
+                // Restrict to 2 decimal places
+                if (input.contains(".")) {
+                    int index = input.indexOf(".");
+                    if (input.length() - index - 1 > 2) {
+                        s.delete(index + 3, input.length());
                     }
                 }
             }
         });
-
-        // Expiry year
-        expiryYearInput.addTextChangedListener(new TextWatcher() {
-            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-            @Override public void onTextChanged(CharSequence s, int start, int before, int count) { clearExpiryError(); }
-            @Override public void afterTextChanged(Editable s) {}
-        });
-
-        // CVV
-        cvvInput.addTextChangedListener(new TextWatcher() {
-            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-            @Override public void onTextChanged(CharSequence s, int start, int before, int count) { clearCvvError(); }
-            @Override public void afterTextChanged(Editable s) {}
-        });
-
-        cvvInput.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_PASSWORD);
     }
 
     private void setupListeners() {
@@ -181,7 +201,9 @@ public class CardCashInActivity extends AppCompatActivity {
         String month = expiryMonthInput.getText().toString();
         String year = expiryYearInput.getText().toString();
         String cvv = cvvInput.getText().toString();
+        String amountStr = cashInAmountInput.getText().toString().trim();
 
+        // --- Card Fields Validation ---
         if (cardNum.isEmpty()) {
             showCardNumberError(getString(R.string.error_card_number_required));
             valid = false;
@@ -209,16 +231,47 @@ public class CardCashInActivity extends AppCompatActivity {
             }
         }
 
+        // --- Amount Validation ---
+        if (amountStr.isEmpty()) {
+            showCashInAmountError(getString(R.string.error_invalid_amount));
+            valid = false;
+        } else {
+            try {
+                double amount = Double.parseDouble(amountStr);
+                if (amount <= 0) {
+                    showCashInAmountError(getString(R.string.error_invalid_amount));
+                    valid = false;
+                } else if (!amountStr.contains(".")) {
+                    // Append .00 if no decimals
+                    cashInAmountInput.setText(String.format("%.2f", amount));
+                }
+            } catch (NumberFormatException e) {
+                showCashInAmountError(getString(R.string.error_invalid_amount));
+                valid = false;
+            }
+        }
+
+        updateButtonState();
         return valid;
     }
 
+    private void updateButtonState() {
+        boolean enabled = !cardNumberInput.getText().toString().trim().isEmpty()
+                && !expiryMonthInput.getText().toString().trim().isEmpty()
+                && !expiryYearInput.getText().toString().trim().isEmpty()
+                && !cvvInput.getText().toString().trim().isEmpty()
+                && !cashInAmountInput.getText().toString().trim().isEmpty();
+        cashInButton.setEnabled(enabled);
+        cashInButton.setAlpha(enabled ? 1f : 0.5f);
+    }
+
+    // --- Error Handling ---
     private void showCardNumberError(String msg) {
         cardNumberInput.setBackground(ContextCompat.getDrawable(this, R.drawable.input_field_error_bg));
         cardNumberHelper.setVisibility(TextView.GONE);
         cardNumberError.setText(msg);
         cardNumberError.setVisibility(TextView.VISIBLE);
     }
-
     private void clearCardNumberError() {
         cardNumberInput.setBackground(ContextCompat.getDrawable(this, R.drawable.input_field_bg));
         cardNumberError.setVisibility(TextView.GONE);
@@ -232,7 +285,6 @@ public class CardCashInActivity extends AppCompatActivity {
         expiryError.setText(msg);
         expiryError.setVisibility(TextView.VISIBLE);
     }
-
     private void clearExpiryError() {
         expiryMonthInput.setBackground(ContextCompat.getDrawable(this, R.drawable.input_field_bg));
         expiryYearInput.setBackground(ContextCompat.getDrawable(this, R.drawable.input_field_bg));
@@ -246,14 +298,134 @@ public class CardCashInActivity extends AppCompatActivity {
         cvvError.setText(msg);
         cvvError.setVisibility(TextView.VISIBLE);
     }
-
     private void clearCvvError() {
         cvvInput.setBackground(ContextCompat.getDrawable(this, R.drawable.input_field_bg));
         cvvError.setVisibility(TextView.GONE);
         cvvHelper.setVisibility(TextView.VISIBLE);
     }
 
+    private void showCashInAmountError(String msg) {
+        cashInAmountInput.setBackground(ContextCompat.getDrawable(this, R.drawable.input_field_error_bg));
+        cashInAmountHelper.setVisibility(TextView.GONE);
+        cashInAmountError.setText(msg);
+        cashInAmountError.setVisibility(TextView.VISIBLE);
+    }
+    private void clearCashInAmountError() {
+        cashInAmountInput.setBackground(ContextCompat.getDrawable(this, R.drawable.input_field_bg));
+        cashInAmountError.setVisibility(TextView.GONE);
+        cashInAmountHelper.setVisibility(TextView.VISIBLE);
+    }
+
+    // Cash-In Button Click
     private void processCashIn() {
-        // TODO: connect to backend or simulate transaction
+        // --- Disable button to prevent spamming ---
+        cashInButton.setEnabled(false);
+        cashInButton.setAlpha(0.5f);
+
+        // --- Retrieve input values ---
+        String accountNumber = new TokenManager(this).getAccountNumber(); // get from local session
+        String cardNum = cardNumberInput.getText().toString().replaceAll("\\D", "");
+        String expiryMonth = expiryMonthInput.getText().toString().trim();
+        String expiryYear = expiryYearInput.getText().toString().trim();
+        String cvv = cvvInput.getText().toString().trim();
+        String amountStr = cashInAmountInput.getText().toString().trim();
+
+        double cashInAmount;
+        try {
+            cashInAmount = Double.parseDouble(amountStr);
+        } catch (NumberFormatException e) {
+            showCashInAmountError(getString(R.string.error_invalid_amount));
+            cashInButton.setEnabled(true);
+            cashInButton.setAlpha(1f);
+            return;
+        }
+
+        // --- Build request ---
+        CardCashInRequest request = new CardCashInRequest(
+                accountNumber,
+                cardType,
+                cardNum,
+                expiryMonth,
+                expiryYear,
+                cvv,
+                cashInAmount
+        );
+
+        // --- Prepare API Service ---
+        ApiService apiService = RetrofitClient.getClient().create(ApiService.class);
+        Call<CardCashInResponse> call = apiService.CardCashIn(request);
+
+        // --- Show progress indicator ---
+        runOnUiThread(() -> Toast.makeText(this, "Processing Cash-In...", Toast.LENGTH_SHORT).show());
+
+        // --- Execute request ---
+        call.enqueue(new retrofit2.Callback<CardCashInResponse>() {
+            @Override
+            public void onResponse(Call<CardCashInResponse> call, retrofit2.Response<CardCashInResponse> response) {
+                runOnUiThread(() -> {
+                    cashInButton.setEnabled(true);
+                    cashInButton.setAlpha(1f);
+                });
+
+                if (response.isSuccessful() && response.body() != null) {
+                    CardCashInResponse res = response.body();
+
+                    if (res.isSuccess()) {
+                        // --- Success ---
+                        double credited = res.getCredited();
+                        double fee = res.getFee();
+                        double chargedTotal = res.getChargedTotal();
+
+                        String msg = String.format(
+                                "Success! ₱%.2f credited to your wallet.\n(₱%.2f fee applied, ₱%.2f charged to card)",
+                                credited, fee, chargedTotal
+                        );
+
+                        runOnUiThread(() -> {
+                            Toast.makeText(CardCashInActivity.this, msg, Toast.LENGTH_LONG).show();
+                            finish(); // close the activity after success
+                        });
+                    } else {
+                        // --- Backend responded with failure ---
+                        runOnUiThread(() ->
+                                Toast.makeText(CardCashInActivity.this, res.getMessage(), Toast.LENGTH_LONG).show()
+                        );
+                    }
+                } else {
+                    // --- Show specific backend error message if available ---
+                    String errorMsg = "Cash-In failed. Try again later.";
+                    try {
+                        if (response.errorBody() != null) {
+                            errorMsg = new org.json.JSONObject(response.errorBody().string())
+                                    .optString("error", errorMsg);
+                        }
+                    } catch (Exception ignored) {}
+
+                    String finalErrorMsg = errorMsg;
+                    runOnUiThread(() ->
+                            Toast.makeText(CardCashInActivity.this, finalErrorMsg, Toast.LENGTH_LONG).show()
+                    );
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CardCashInResponse> call, Throwable t) {
+                runOnUiThread(() -> {
+                    cashInButton.setEnabled(true);
+                    cashInButton.setAlpha(1f);
+                    Toast.makeText(CardCashInActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_LONG).show();
+                });
+            }
+        });
+    }
+
+
+    // --- Utility inner class for shorter watchers ---
+    private static class SimpleTextWatcher implements TextWatcher {
+        private final Runnable onChange;
+        SimpleTextWatcher(Runnable onChange) { this.onChange = onChange; }
+        @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+        @Override public void onTextChanged(CharSequence s, int start, int before, int count) { onChange.run(); }
+        @Override public void afterTextChanged(Editable s) {}
     }
 }

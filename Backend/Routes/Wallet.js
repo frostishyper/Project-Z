@@ -1,3 +1,4 @@
+// Get Wallet Balance Route
 const express = require('express');
 const router = express.Router();
 const db = require('../Config/Connector');

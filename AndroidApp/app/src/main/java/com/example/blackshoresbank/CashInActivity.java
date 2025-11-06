@@ -4,9 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import androidx.appcompat.app.AppCompatActivity;
 
-public class CashInActivity extends AppCompatActivity {
+public class CashInActivity extends BaseActivity {
 
     private ImageView buttonBack;
     private LinearLayout itemPartnerVisa;

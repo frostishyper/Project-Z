@@ -64,6 +64,61 @@
                     android:gravity="center_vertical" />
             </LinearLayout>
 
+            <!-- Cash-In Amount Section -->
+            <LinearLayout
+                android:id="@+id/CashInAmountContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="40dp">
+
+                <TextView
+                    android:id="@+id/CashInAmountLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_CashIn"
+                    android:textColor="#D1D5DB"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/inter_medium" />
+
+                <EditText
+                    android:id="@+id/CashInAmountInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/input_field_bg"
+                    android:fontFamily="@font/inter"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#CCCCCC"
+                    android:textSize="15sp"
+                    android:paddingHorizontal="16dp"
+                    android:inputType="number"
+                    android:digits="0123456789-"
+                    android:maxLength="19" />
+
+                <TextView
+                    android:id="@+id/CashInAmmountError"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/error_invalid_amount"
+                    android:textColor="#C62828"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_marginTop="6dp"
+                    android:visibility="gone" />
+
+                <!-- Helper -->
+                <TextView
+                    android:id="@+id/CashInAmountHelper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/helper_CashIn"
+                    android:textColor="#9CA3AF"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/inter"
+                    android:layout_marginTop="6dp" />
+            </LinearLayout>
+
             <!-- Card Number Section -->
             <LinearLayout
                 android:id="@+id/CardNumberContainer"
@@ -108,7 +163,7 @@
                     android:layout_marginTop="6dp"
                     android:visibility="gone" />
 
-                <!-- Helper (kept visible by default, change to gone if you prefer) -->
+                <!-- Helper -->
                 <TextView
                     android:id="@+id/CardNumberHelper"
                     android:layout_width="wrap_content"

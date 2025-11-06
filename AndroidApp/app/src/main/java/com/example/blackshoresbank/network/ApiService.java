@@ -7,6 +7,8 @@ import com.example.blackshoresbank.models.RegisterRequest;
 import com.example.blackshoresbank.models.RegisterResponse;
 import com.example.blackshoresbank.models.WalletBalanceRequest;
 import com.example.blackshoresbank.models.WalletBalanceResponse;
+import com.example.blackshoresbank.models.CardCashInRequest;
+import com.example.blackshoresbank.models.CardCashInResponse;
 
 // Retrofit Protocols & Procedures
 import retrofit2.Call;
@@ -24,5 +26,6 @@ public interface ApiService {
     @POST("api/wallet")
     Call<WalletBalanceResponse> GetWalletBalance(@Body WalletBalanceRequest request);
 
-    // Future routes are to be added here
+    @POST("api/CardCashIn")
+    Call<CardCashInResponse> CardCashIn(@Body CardCashInRequest request);
 }
