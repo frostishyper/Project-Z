@@ -306,7 +306,6 @@
                 android:gravity="center_vertical"
                 android:weightSum="1">
 
-                <!-- Transactions Label -->
                 <TextView
                     android:id="@+id/TransactionsLabel"
                     android:layout_width="wrap_content"
@@ -318,7 +317,6 @@
                     android:layout_weight="0.5"
                     android:gravity="start" />
 
-                <!-- Right label -->
                 <TextView
                     android:id="@+id/SeeAllTransactions"
                     android:layout_width="wrap_content"
@@ -331,14 +329,14 @@
                     android:gravity="end" />
             </LinearLayout>
 
-            <!-- Add the 5 most recent entries here -->
-
-            <!-- Entry Examples -->
-            <!-- Transaction Sent -->
-            <include layout="@layout/home_transaction_sent" />
-            <include layout="@layout/home_transaction_recieved" />
-            <include layout="@layout/home_transaction_purchase" />
-
+            <!-- Dynamic transaction container -->
+            <LinearLayout
+                android:id="@+id/transactionListContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!-- Transactions will be added here dynamically -->
+            </LinearLayout>
 
         </LinearLayout>
 

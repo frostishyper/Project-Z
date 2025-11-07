@@ -9,6 +9,8 @@ import com.example.blackshoresbank.models.WalletBalanceRequest;
 import com.example.blackshoresbank.models.WalletBalanceResponse;
 import com.example.blackshoresbank.models.CardCashInRequest;
 import com.example.blackshoresbank.models.CardCashInResponse;
+import com.example.blackshoresbank.models.TransactionHistoryRequest;
+import com.example.blackshoresbank.models.TransactionHistoryResponse;
 
 // Retrofit Protocols & Procedures
 import retrofit2.Call;
@@ -16,6 +18,8 @@ import retrofit2.http.Body;
 import retrofit2.http.POST;
 
 public interface ApiService {
+
+    // Api Endpoint Defenitions Goes Here
 
     @POST("api/register")
     Call<RegisterResponse> RegisterAccount(@Body RegisterRequest request);
@@ -28,4 +32,7 @@ public interface ApiService {
 
     @POST("api/CardCashIn")
     Call<CardCashInResponse> CardCashIn(@Body CardCashInRequest request);
+
+    @POST("api/transactions")
+    Call<TransactionHistoryResponse> GetTransactionHistory(@Body TransactionHistoryRequest request);
 }

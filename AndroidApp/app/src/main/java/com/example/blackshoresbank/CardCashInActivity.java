@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.ContextCompat;
-import android.app.ProgressDialog;
 import android.widget.Toast;
 
 // Networking Imports
@@ -20,8 +19,6 @@ import com.example.blackshoresbank.network.ApiService;
 import com.example.blackshoresbank.network.RetrofitClient;
 import com.example.blackshoresbank.utils.TokenManager;
 import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class CardCashInActivity extends BaseActivity {
 

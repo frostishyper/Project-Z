@@ -44,6 +44,7 @@ const RegisterRoute = require('./Routes/Register');
 const LoginRoute = require('./Routes/Login');
 const WalletRoute = require('./Routes/Wallet');
 const CardCashInRoute = require('./Routes/CardCash-In');
+const TransactionsRoute = require('./Routes/Transactions');
 
 //  =====================================
 //  Server Launch Procedures
@@ -60,6 +61,7 @@ app.use('/api/register', RegisterRoute);
 app.use('/api/login', LoginRoute);
 app.use('/api/wallet', WalletRoute);
 app.use('/api/CardCashIn', CardCashInRoute);
+app.use('/api/transactions', TransactionsRoute);
 
 
 
