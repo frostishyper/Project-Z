@@ -51,13 +51,21 @@ public class HomeActivity extends BaseActivity {
             Intent intent = new Intent(HomeActivity.this, CashInActivity.class);
             startActivity(intent);
         });
+
+        // Navigate To Transactions Page
+        TextView seeAll = findViewById(R.id.SeeAllTransactions);
+        seeAll.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, TransactionsActivity.class);
+            startActivity(intent);
+        });
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        // Refresh balance when returning to home
+        // Refresh balance & recent transactions when returning to home
         loadWalletBalance();
+        loadRecentTransactions();
     }
 
     private void loadWalletBalance() {
@@ -86,7 +94,7 @@ public class HomeActivity extends BaseActivity {
         });
     }
 
-    // Recent Transactions
+    // Recent TransactionsActivity
     private void loadRecentTransactions() {
         String accountNumber = tokenManager.getAccountNumber();
 
@@ -148,20 +156,20 @@ public class HomeActivity extends BaseActivity {
         if ("OUTGOING".equals(direction)) {
             if ("MERCHANT".equals(recipientType)) {
                 // Purchase from merchant
-                layoutId = R.layout.home_transaction_purchase;
+                layoutId = R.layout.home_tr_purchase;
                 amountColor = 0xFFC62828; // Red
                 typeText = "Purchase";
                 partnerName = tx.getMerchantName() != null ? tx.getMerchantName() : "Merchant";
             } else {
                 // Sent to user
-                layoutId = R.layout.home_transaction_sent;
+                layoutId = R.layout.home_tr_sent;
                 amountColor = 0xFFC62828; // Red
                 typeText = "Sent";
                 partnerName = tx.getRecipientNumber();
             }
         } else {
             // INCOMING
-            layoutId = R.layout.home_transaction_recieved;
+            layoutId = R.layout.home_tr_recieved;
             amountColor = 0xFF2E7D32; // Green
             typeText = "Received";
 

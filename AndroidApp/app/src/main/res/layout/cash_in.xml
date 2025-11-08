@@ -31,7 +31,7 @@
             android:layout_weight="1" />
     </LinearLayout>
 
-    <!-- Title BELOW the back button, matching original spacing -->
+    <!-- Page Title -->
     <TextView
         android:id="@+id/text_title"
         android:layout_width="match_parent"
@@ -44,7 +44,7 @@
         android:textStyle="bold"
         android:gravity="center" />
 
-    <!-- Subtitle: LEFT-ALIGNED as requested (not centered) -->
+    <!-- Page Sub header -->
     <TextView
         android:id="@+id/text_subtitle"
         android:layout_width="match_parent"

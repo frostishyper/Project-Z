@@ -16,7 +16,7 @@
     <string name="home_see"><u>See All</u></string>
     <string name="home_transaction_currency">$</string>
 
-    <!-- Transactions Placeholders -->
+    <!-- TransactionsActivity Placeholders -->
     <string name="home_transaction_sent">Sent to</string>
     <string name="home_transaction_recieved">Recieved from</string>
     <string name="home_transaction_person">Luka Doncic</string>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/smallcard_bg"
+    android:padding="11dp"
+    android:layout_marginTop="25dp">
+
+    <!-- Label -->
+    <TextView
+        android:id="@+id/entry_label_received"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Tr_Placeholder_RecievedLabel"
+        android:fontFamily="@font/inter_medium"
+        android:textSize="14sp"
+        android:lineHeight="19dp"
+        android:textColor="#CCCCCC"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Entity -->
+    <TextView
+        android:id="@+id/entry_from_received"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Tr_Placeholder_Entity"
+        android:fontFamily="@font/inter_medium"
+        android:textSize="15sp"
+        android:lineHeight="19dp"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/entry_label_received"/>
+
+    <!-- Time -->
+    <TextView
+        android:id="@+id/entry_time_received"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Tr_Placeholder_Time"
+        android:fontFamily="@font/inter_medium"
+        android:textSize="14sp"
+        android:lineHeight="19dp"
+        android:textColor="#4C4C4C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Currency -->
+    <TextView
+        android:id="@+id/entry_currency_received"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Currency"
+        android:fontFamily="@font/inter_medium"
+        android:textSize="15sp"
+        android:lineHeight="19dp"
+        android:textColor="#2E7D32"
+        android:layout_marginEnd="4dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@id/entry_amount_received"
+        app:layout_constraintTop_toBottomOf="@id/entry_time_received"/>
+
+    <!-- Amount -->
+    <TextView
+        android:id="@+id/entry_amount_received"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Tr_Placeholder_Amount"
+        android:fontFamily="@font/inter_medium"
+        android:textSize="15sp"
+        android:lineHeight="19dp"
+        android:textColor="#2E7D32"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/entry_time_received"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

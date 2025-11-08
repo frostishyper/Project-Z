@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dividerContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingHorizontal="5dp"
+    android:paddingVertical="5dp"
+    android:layout_marginTop="30dp">
+
+    <View
+        android:id="@+id/dividerLineLeft"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="1"
+        android:background="#333333"/>
+
+    <LinearLayout
+        android:id="@+id/dividerChip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="4dp"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="5dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/divider_chip_bg">
+
+        <TextView
+            android:id="@+id/dividerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Tr_Placeholder_Date"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:fontFamily="@font/inter"
+            android:gravity="center"
+            android:lineHeight="20dp"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/dividerLineRight"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="1"
+        android:background="#333333"/>
+
+</LinearLayout>

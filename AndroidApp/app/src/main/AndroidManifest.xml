@@ -16,6 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BlackShoresBank">
 
+        <!-- Default Activity/Page -->
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -26,11 +27,14 @@
             </intent-filter>
         </activity>
 
+        <!-- Included Activities/Page -->
         <activity android:name=".RegisterActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".CashInActivity" />
         <activity android:name=".CardCashInActivity" />
+        <activity android:name=".TransactionsActivity" />
+        <activity android:name=".ReceiptActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
