@@ -50,7 +50,6 @@
             android:paddingVertical="6dp">
 
             <!-- Page Title -->
-            <!-- The Correct Reciept Label Should Be Here -->
             <TextView
                 android:id="@+id/receipt_title"
                 android:layout_width="match_parent"
@@ -58,7 +57,7 @@
                 android:fontFamily="@font/inter"
                 android:text="@string/receipt_sentlabel"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:gravity="center" />
 
@@ -140,7 +139,6 @@
 
             <!-- Note Container -->
             <LinearLayout
-                xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/receipt_note_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -295,6 +293,16 @@
                         android:textSize="16sp" />
                 </LinearLayout>
             </LinearLayout>
+
+            <!-- Logo-->
+            <ImageView
+                android:id="@+id/image_blackshores_logo"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="40dp"
+                android:contentDescription="@string/desc_logo_blackshores"
+                android:padding="5dp"
+                android:src="@drawable/blackshoreslogo" />
 
         </LinearLayout>
     </LinearLayout>

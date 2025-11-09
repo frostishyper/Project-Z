@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0A0A0A"
-    tools:context=".CardCashInActivity">
+    tools:context=".SendActivity">
 
     <ScrollView
         android:id="@+id/CardScrollView"
@@ -36,7 +36,7 @@
                 android:layout_marginTop="10dp"
                 android:src="@drawable/ico_back"/>
 
-            <!-- Card Header -->
+            <!-- Page Header Container -->
             <LinearLayout
                 android:id="@+id/CardHeaderContainer"
                 android:layout_width="match_parent"
@@ -45,44 +45,37 @@
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
 
-                <ImageView
-                    android:id="@+id/CardLogo"
-                    android:layout_width="70dp"
-                    android:layout_height="51dp"
-                    android:layout_marginEnd="8dp"
-                    android:src="@drawable/mastercard_logo"
-                    android:contentDescription="@string/desc_logo_mastercard" />
-
+                <!-- Header Text-->
                 <TextView
                     android:id="@+id/CardTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/inter_medium"
-                    android:text="@string/card_mastercard"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/send_header"
                     android:textColor="#FFFFFF"
                     android:textSize="28sp"
                     android:gravity="center_vertical" />
             </LinearLayout>
 
-            <!-- Cash-In Amount Section -->
+            <!-- Recipient Section -->
             <LinearLayout
-                android:id="@+id/CashInAmountContainer"
+                android:id="@+id/RecipientContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="40dp">
 
                 <TextView
-                    android:id="@+id/CashInAmountLabel"
+                    android:id="@+id/RecipientLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/label_CashIn"
+                    android:text="@string/send_label_recipient"
                     android:textColor="#D1D5DB"
                     android:textSize="13sp"
                     android:fontFamily="@font/inter_medium" />
 
                 <EditText
-                    android:id="@+id/CashInAmountInput"
+                    android:id="@+id/RecipientInput"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginTop="8dp"
@@ -96,53 +89,41 @@
                     android:digits="0123456789-"
                     android:maxLength="19" />
 
-                <TextView
-                    android:id="@+id/CashInAmmountError"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/error_invalid_amount"
-                    android:textColor="#C62828"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/inter_medium"
-                    android:layout_marginTop="6dp"
-                    android:visibility="gone" />
-
                 <!-- Helper -->
                 <TextView
-                    android:id="@+id/CashInAmountHelper"
+                    android:id="@+id/RecipientHelper"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/helper_CashIn"
-                    android:textColor="#9CA3AF"
-                    android:textSize="12sp"
+                    android:layout_marginTop="6dp"
                     android:fontFamily="@font/inter"
-                    android:layout_marginTop="6dp" />
+                    android:text="@string/send_helper_recipient"
+                    android:textColor="#9CA3AF"
+                    android:textSize="12sp" />
             </LinearLayout>
 
-            <!-- Card Number Section -->
+            <!-- Send Amount Section -->
             <LinearLayout
-                android:id="@+id/CardNumberContainer"
+                android:id="@+id/SendAmountContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="40dp">
 
                 <TextView
-                    android:id="@+id/CardNumberLabel"
+                    android:id="@+id/SendAmountLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/label_card_number"
+                    android:text="@string/send_label_amount"
                     android:textColor="#D1D5DB"
                     android:textSize="13sp"
                     android:fontFamily="@font/inter_medium" />
 
                 <EditText
-                    android:id="@+id/CardNumberInput"
+                    android:id="@+id/SendAmountInput"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/input_field_bg"
-
                     android:fontFamily="@font/inter"
                     android:textColor="#FFFFFF"
                     android:textColorHint="#CCCCCC"
@@ -152,12 +133,25 @@
                     android:digits="0123456789-"
                     android:maxLength="19" />
 
+                <!-- Validation Error -->
                 <TextView
-                    android:id="@+id/CardNumberError"
+                    android:id="@+id/SendAmountError"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/error_invalid_card_number"
+                    android:text="@string/send_error_amount"
                     android:textColor="#C62828"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_marginTop="6dp"
+                    android:visibility="gone" />
+
+                <!-- Validation Success -->
+                <TextView
+                    android:id="@+id/SendAmountApprove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/send_approve_amount"
+                    android:textColor="#2E7D32"
                     android:textSize="12sp"
                     android:fontFamily="@font/inter_medium"
                     android:layout_marginTop="6dp"
@@ -165,135 +159,55 @@
 
                 <!-- Helper -->
                 <TextView
-                    android:id="@+id/CardNumberHelper"
+                    android:id="@+id/SendAmountHelper"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/helper_card_digits"
-                    android:textColor="#9CA3AF"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/inter"
-                    android:layout_marginTop="6dp" />
-            </LinearLayout>
-
-            <!-- Expiry Section -->
-            <LinearLayout
-                android:id="@+id/ExpiryContainer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="32dp">
-
-                <TextView
-                    android:id="@+id/ExpiryLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/label_expiry_date"
-                    android:textColor="#D1D5DB"
-                    android:textSize="13sp"
-                    android:fontFamily="@font/inter_medium" />
-
-                <LinearLayout
-                    android:id="@+id/ExpiryInputRow"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp">
-
-                    <EditText
-                        android:id="@+id/ExpiryMonthInput"
-                        android:layout_width="0dp"
-                        android:layout_height="48dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/input_field_bg"
-                        android:hint="@string/hint_expiry_month"
-                        android:gravity="center"
-                        android:fontFamily="@font/inter"
-                        android:textColor="#FFFFFF"
-                        android:textColorHint="#CCCCCC"
-                        android:textSize="15sp"
-                        android:inputType="number"
-                        android:maxLength="2" />
-
-                    <Space
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content" />
-
-                    <EditText
-                        android:id="@+id/ExpiryYearInput"
-                        android:layout_width="0dp"
-                        android:layout_height="48dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/input_field_bg"
-                        android:hint="@string/hint_expiry_year"
-                        android:gravity="center"
-                        android:fontFamily="@font/inter"
-                        android:textColor="#FFFFFF"
-                        android:textColorHint="#CCCCCC"
-                        android:textSize="15sp"
-                        android:inputType="number"
-                        android:maxLength="2" />
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/ExpiryError"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/error_invalid_expiry"
-                    android:textColor="#C62828"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/inter_medium"
                     android:layout_marginTop="6dp"
-                    android:visibility="gone" />
-
-                <!-- Helper -->
-                <TextView
-                    android:id="@+id/ExpiryHelper"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/helper_expiry"
-                    android:textColor="#9CA3AF"
-                    android:textSize="12sp"
                     android:fontFamily="@font/inter"
-                    android:layout_marginTop="6dp" />
+                    android:text="@string/send_helper_amount"
+                    android:textColor="#9CA3AF"
+                    android:textSize="12sp" />
             </LinearLayout>
 
-            <!-- CVV Section -->
+            <!-- Note Section -->
             <LinearLayout
-                android:id="@+id/CvvContainer"
+                android:id="@+id/NoteContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="32dp">
+                android:layout_marginTop="40dp">
 
                 <TextView
-                    android:id="@+id/CvvLabel"
+                    android:id="@+id/NoteLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/label_cvv"
+                    android:text="@string/send_label_note"
                     android:textColor="#D1D5DB"
                     android:textSize="13sp"
                     android:fontFamily="@font/inter_medium" />
 
                 <EditText
-                    android:id="@+id/CvvInput"
-                    android:layout_width="125dp"
+                    android:id="@+id/NoteInput"
+                    android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/input_field_bg"
-                    android:gravity="center"
                     android:fontFamily="@font/inter"
                     android:textColor="#FFFFFF"
                     android:textColorHint="#CCCCCC"
                     android:textSize="15sp"
-                    android:inputType="numberPassword"
-                    android:maxLength="4" />
+                    android:paddingHorizontal="16dp"
+                    android:inputType="number"
+                    android:digits="0123456789-"
+                    android:maxLength="19" />
 
+                <!-- If Note Is Included-->
                 <TextView
-                    android:id="@+id/CvvError"
+                    android:id="@+id/NoteApprove"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/error_invalid_cvv"
-                    android:textColor="#C62828"
+                    android:text="@string/send_approve_note"
+                    android:textColor="#2E7D32"
                     android:textSize="12sp"
                     android:fontFamily="@font/inter_medium"
                     android:layout_marginTop="6dp"
@@ -301,25 +215,24 @@
 
                 <!-- Helper -->
                 <TextView
-                    android:id="@+id/CvvHelper"
+                    android:id="@+id/NoteHelper"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/helper_cvv_digits"
-                    android:textColor="#9CA3AF"
-                    android:textSize="12sp"
+                    android:layout_marginTop="6dp"
                     android:fontFamily="@font/inter"
-                    android:layout_marginTop="6dp" />
+                    android:text="@string/send_helper_note"
+                    android:textColor="#9CA3AF"
+                    android:textSize="12sp" />
             </LinearLayout>
-
 
             <!-- Action Button -->
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/CashInBtn"
+                android:id="@+id/Proceed"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="40dp"
                 android:background="@drawable/general_button"
-                android:text="@string/button_cash_in"
+                android:text="@string/send_btn_continue"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 android:fontFamily="@font/inter_medium"
@@ -327,16 +240,23 @@
                 android:includeFontPadding="false"
                 android:stateListAnimator="@null" />
 
-            <!-- Brand Logo -->
+            <!-- Logo -->
             <ImageView
-                android:id="@+id/BlackShoresLogo"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
+                android:id="@+id/image_blackshores_logo"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
                 android:layout_marginTop="40dp"
-                android:src="@drawable/blackshoreslogo"
-                android:contentDescription="@string/desc_logo_blackshores" />
+                android:contentDescription="@string/desc_logo_blackshores"
+                android:padding="5dp"
+                android:src="@drawable/blackshoreslogo" />
 
+            <!-- Spacer -->
+            <View
+                android:id="@+id/ScrollSpacer"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:contentDescription="@null" />
         </LinearLayout>
+
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

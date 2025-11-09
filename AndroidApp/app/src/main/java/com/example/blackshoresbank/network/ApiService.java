@@ -11,6 +11,10 @@ import com.example.blackshoresbank.models.CardCashInRequest;
 import com.example.blackshoresbank.models.CardCashInResponse;
 import com.example.blackshoresbank.models.TransactionHistoryRequest;
 import com.example.blackshoresbank.models.TransactionHistoryResponse;
+import com.example.blackshoresbank.models.SendMoneyPrepareRequest;
+import com.example.blackshoresbank.models.SendMoneyPrepareResponse;
+import com.example.blackshoresbank.models.SendMoneyCommitRequest;
+import com.example.blackshoresbank.models.SendMoneyCommitResponse;
 
 // Retrofit Protocols & Procedures
 import retrofit2.Call;
@@ -19,7 +23,7 @@ import retrofit2.http.POST;
 
 public interface ApiService {
 
-    // Api Endpoint Defenitions Goes Here
+    // Api Endpoint Definitions Goes Here
 
     @POST("api/register")
     Call<RegisterResponse> RegisterAccount(@Body RegisterRequest request);
@@ -35,4 +39,11 @@ public interface ApiService {
 
     @POST("api/transactions")
     Call<TransactionHistoryResponse> GetTransactionHistory(@Body TransactionHistoryRequest request);
+
+    @POST("api/sendmoney/prepare")
+    Call<SendMoneyPrepareResponse> PrepareSendMoney(@Body SendMoneyPrepareRequest request);
+
+    @POST("api/sendmoney/commit")
+    Call<SendMoneyCommitResponse> CommitSendMoney(@Body SendMoneyCommitRequest request);
+
 }

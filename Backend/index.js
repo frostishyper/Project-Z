@@ -1,15 +1,4 @@
-//  =====================================
-//  Backend Version (1.0)
-//  (PLEASE UPDATE VERSION IF YOUR UPDATING)
-//  
-//  FEATURES:
-//  #1 - 
-//  
-//
-//  =====================================
-
-
-
+// Backend Main
 
 //  =====================================
 //  Imports / Packages
@@ -27,8 +16,12 @@
 //  IMPORTS/REQUIRES
 //
 //  - db (Databse Connection)
-//  - RegisterRoute
-//  
+//  - RegisterRoute (Route For Creating Accounts)
+//  - LoginRoute (Route For Login Validation & Auth)
+//  - WalletRoute (Route For Getting Wallet Balance)
+//  - TransactionsRoute (Route For Getting Transaction History)
+//  - CardCashInRoute (Route For Cashing-In Using Cards)
+//  - SendMoneyRoute (Route For Sending Money From One User To Another)
 //
 //  =====================================
 const express = require('express');
@@ -43,8 +36,10 @@ const db = require('./Config/Connector');
 const RegisterRoute = require('./Routes/Register');
 const LoginRoute = require('./Routes/Login');
 const WalletRoute = require('./Routes/Wallet');
-const CardCashInRoute = require('./Routes/CardCash-In');
 const TransactionsRoute = require('./Routes/Transactions');
+const CardCashInRoute = require('./Routes/CardCash-In');
+const SendMoneyRoute = require('./Routes/SendMoney');
+
 
 //  =====================================
 //  Server Launch Procedures
@@ -62,6 +57,7 @@ app.use('/api/login', LoginRoute);
 app.use('/api/wallet', WalletRoute);
 app.use('/api/CardCashIn', CardCashInRoute);
 app.use('/api/transactions', TransactionsRoute);
+app.use('/api/sendmoney', SendMoneyRoute); // Two End Points Inside
 
 
 

@@ -45,6 +45,13 @@ public class HomeActivity extends BaseActivity {
             startActivity(intent);
         });
 
+        // Navigate To Transactions Page
+        TextView seeAll = findViewById(R.id.SeeAllTransactions);
+        seeAll.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, TransactionsActivity.class);
+            startActivity(intent);
+        });
+
         // Navigate to Cash In Page
         LinearLayout actionCashIn = findViewById(R.id.Action_CashIn);
         actionCashIn.setOnClickListener(v -> {
@@ -52,12 +59,14 @@ public class HomeActivity extends BaseActivity {
             startActivity(intent);
         });
 
-        // Navigate To Transactions Page
-        TextView seeAll = findViewById(R.id.SeeAllTransactions);
-        seeAll.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, TransactionsActivity.class);
+        // Navigate to Transfer Page
+        LinearLayout actionTransfer = findViewById(R.id.Action_Transfer);
+        actionTransfer.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, SendActivity.class);
             startActivity(intent);
         });
+
+
     }
 
     @Override
