@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0A0A"
+    tools:context=".TransactionsActivity">
+
+    <ScrollView
+        android:id="@+id/CardScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Main Container -->
+        <LinearLayout
+            android:id="@+id/CardFormContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="37dp"
+            android:padding="10dp">
+
+            <!-- Back Button -->
+            <ImageView
+                android:id="@+id/BackBtn"
+                android:layout_width="45dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ico_back"/>
+
+            <!-- Page Title -->
+            <TextView
+                android:id="@+id/text_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/inter"
+                android:text="@string/TransactionsPage_Label"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <!-- Records Are Generated Here -->
+
+            <!-- Logo -->
+            <ImageView
+                android:id="@+id/image_blackshores_logo"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="40dp"
+                android:contentDescription="@string/desc_logo_blackshores"
+                android:padding="5dp"
+                android:src="@drawable/blackshoreslogo" />
+
+            <!-- Spacer -->
+            <View
+                android:id="@+id/ScrollSpacer"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

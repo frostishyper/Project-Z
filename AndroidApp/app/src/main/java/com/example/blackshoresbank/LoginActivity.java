@@ -20,7 +20,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends BaseActivity {
 

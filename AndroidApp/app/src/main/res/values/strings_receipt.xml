@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Receipt screen -->
+
+    <!-- static -->
+    <string name="receipt_currency">$</string>
+    <string name="receipt_disclaimer">
+    You may confirm the status of your transaction with your recipient. Other details can be found bellow
+    </string>
+    <string name="receipt_notelabel">Note :</string>
+    <string name="receipt_Accountlabel">Account :</string>
+    <string name="receipt_feelabel">Fee :</string>
+    <string name="receipt_referencelabel">Reference ID :</string>
+
+    <!-- Depends -->
+    <string name="receipt_sentlabel">Sent Money To</string>
+    <string name="receipt_recievedlabel">Recieved Money From</string>
+    <string name="receipt_purchaselabel">Purchased From</string>
+
+    <!-- placeholders -->
+    <string name="receipt_placeholder_amount">100.00</string>
+    <string name="receipt_placeholder_datetime">March 6, 2026 03:45</string>
+    <string name="receipt_placeholder_Note">Lorem Ipsum</string>
+    <string name="receipt_placeholder_account">09123456789</string>
+    <string name="receipt_placeholder_fee">$1.00</string>
+    <string name="receipt_placeholder_reference">221664</string>
+
+</resources>

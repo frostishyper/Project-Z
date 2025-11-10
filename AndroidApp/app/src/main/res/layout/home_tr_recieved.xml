@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -14,20 +15,20 @@
         android:layout_marginTop="10dp">
 
         <TextView
-            android:id="@+id/Home_TransactionType"
+            android:id="@+id/transactionType"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/home_transaction_recieved"
+            android:text="Received"
             android:textColor="#AAAAAA"
             android:textSize="10sp"
             android:fontFamily="@font/inter_medium" />
 
         <TextView
-            android:id="@+id/Home_TransactionDate"
+            android:id="@+id/transactionDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/home_transaction_date"
+            android:text="Date"
             android:textColor="#AAAAAA"
             android:textSize="10sp"
             android:fontFamily="@font/inter_medium" />
@@ -42,11 +43,11 @@
         android:layout_marginTop="5dp">
 
         <TextView
-            android:id="@+id/Home_TransactionPartner"
+            android:id="@+id/transactionPartner"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/home_transaction_person"
+            android:text="Person"
             android:textColor="#FFFFFF"
             android:textSize="13sp"
             android:fontFamily="@font/inter_medium" />
@@ -54,17 +55,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/home_transaction_currency"
+            android:text="₱"
             android:textColor="#2E7D32"
             android:textSize="13sp"
             android:fontFamily="@font/inter_medium"
             android:layout_marginEnd="2dp" />
 
         <TextView
-            android:id="@+id/Home_TransactionAmount"
+            android:id="@+id/transactionAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="150"
+            android:text="0.00"
             android:textColor="#2E7D32"
             android:textSize="13sp"
             android:fontFamily="@font/inter_medium" />

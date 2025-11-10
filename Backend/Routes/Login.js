@@ -1,14 +1,4 @@
-//  =====================================
-//  _ (1.0)
-//  (PLEASE UPDATE VERSION IF YOUR UPDATING)
-//  
-//  Digest:
-//  Register Router for validating and checking if login credentials match an existing account.
-//  
-//  
-//
-//  =====================================
-
+// Login Route
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
