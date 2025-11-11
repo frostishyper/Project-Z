@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0A0A"
+    tools:context=".ConfirmPurchaseActivity">
+
+    <!-- Ui Frame -->
+    <LinearLayout
+        android:id="@+id/PurchasePreview_Frame"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="4dp"
+        android:paddingVertical="22dp"
+        android:gravity="top|center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5">
+
+        <!-- Cancel Button Container -->
+        <LinearLayout
+            android:id="@+id/CancelBtnContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp">
+
+            <ImageView
+                android:id="@+id/CancelBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ico_back"
+                android:contentDescription="@string/back_button_desc" />
+        </LinearLayout>
+
+        <!-- Preview Inner Frame -->
+        <LinearLayout
+            android:id="@+id/PurchasePreview_InnerFrame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="6dp">
+
+            <!-- Page Title -->
+            <TextView
+                android:id="@+id/PurchasePreview_Header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter"
+                android:text="@string/ConfirmPurchase_PageHeader"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <!-- Amount Header -->
+            <TextView
+                android:id="@+id/PurchasePreview_CostHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_medium"
+                android:text="Placeholder Cost"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="30dp" />
+
+            <!-- Detailed Preview Section -->
+            <LinearLayout
+                android:id="@+id/PurchasePreview_Details_Container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:padding="15dp"
+                android:background="@drawable/smallcard_bg">
+
+                <!-- Source Row -->
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Label Source -->
+                    <TextView
+                        android:id="@+id/PurchasePreview_Label_Source"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_medium"
+                        android:letterSpacing="0"
+                        android:text="@string/ConfirmPurchase_Label_Source"
+                        android:textColor="#AAAAAA"
+                        android:textSize="16sp" />
+
+                    <!-- Spacer -->
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <!-- Right-side values -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:orientation="vertical">
+
+                        <!-- My Balance Label -->
+                        <TextView
+                            android:id="@+id/PurchasePreview_Label_TargetSource"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_medium"
+                            android:letterSpacing="0"
+                            android:text="@string/ConfirmPurchase_Label_MyBalance"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+
+                        <!-- User Number Value -->
+                        <TextView
+                            android:id="@+id/PurchasePreview_UserNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_medium"
+                            android:letterSpacing="0"
+                            android:text="Placeholder UserNumber"
+                            android:textColor="#4C4C4C"
+                            android:textSize="16sp"
+                            android:layout_marginTop="5dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#FFFFFF" />
+
+                <!-- Merchant Row -->
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Label Merchant -->
+                    <TextView
+                        android:id="@+id/PurchasePreview_Label_Merchant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_medium"
+                        android:letterSpacing="0"
+                        android:text="@string/ConfirmPurchase_Label_Merchant"
+                        android:textColor="#AAAAAA"
+                        android:textSize="16sp" />
+
+                    <!-- Spacer -->
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <!-- Right-side values -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:orientation="vertical">
+
+                        <!-- Merchant Name Value -->
+                        <TextView
+                            android:id="@+id/PurchasePreview_MerchantName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_medium"
+                            android:letterSpacing="0"
+                            android:text="Placeholder Merchant Name"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+
+                        <!-- Listing Name Value -->
+                        <TextView
+                            android:id="@+id/PurchasePreview_ListingName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_medium"
+                            android:letterSpacing="0"
+                            android:text="Listing Name Placeholder"
+                            android:textColor="#4C4C4C"
+                            android:textSize="16sp"
+                            android:layout_marginTop="5dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#FFFFFF" />
+
+                <!-- Summary Row: Initial Balance -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/PurchasePreview_Label_IntialBalance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_medium"
+                        android:letterSpacing="0"
+                        android:text="@string/ConfirmPurchase_Label_InitialBalance"
+                        android:textColor="#AAAAAA"
+                        android:textSize="16sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+                    <TextView
+                        android:id="@+id/PurchasePreview_InitialBalance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_medium"
+                        android:letterSpacing="0"
+                        android:text="Placholder Intial Balance"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <!-- Preview Row: Purchase Cost -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/PurchasePreview_Label_PurchaseCost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_medium"
+                        android:letterSpacing="0"
+                        android:text="@string/ConfirmPurchase_Label_PurchaseCost"
+                        android:textColor="#AAAAAA"
+                        android:textSize="16sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+                    <TextView
+                        android:id="@+id/PurchasePreview_Cost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_medium"
+                        android:letterSpacing="0"
+                        android:text="Placeholder Cost"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <!-- Preview Row: New balance -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/PurchasePreview_Label_NewBalance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_medium"
+                        android:letterSpacing="0"
+                        android:text="@string/ConfirmPurchase_Label_NewBalance"
+                        android:textColor="#AAAAAA"
+                        android:textSize="16sp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+                    <TextView
+                        android:id="@+id/PurchasePreview_NewBalance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_medium"
+                        android:letterSpacing="0"
+                        android:text="Placeholder New Balance"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!-- Note Container -->
+            <LinearLayout
+                android:id="@+id/PurchasePreview_Note_Frame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/smallcard_bg">
+
+                <TextView
+                    android:id="@+id/PurchasePreview_Label_Note"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:letterSpacing="0"
+                    android:text="@string/ConfirmPurchase_Label_Note"
+                    android:textColor="#CCCCCC"
+                    android:textSize="16sp" />
+                <View
+                    android:id="@+id/PurchasePreview_Note_Divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#FFFFFF" />
+                <TextView
+                    android:id="@+id/PurchasePreview_Note"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/inter_medium"
+                    android:letterSpacing="0"
+                    android:text="Placeholder Purchase Note"
+                    android:textColor="#CCCCCC"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Action Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/PurchaseBtn"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/general_button"
+                android:text="@string/ConfirmPurchase_Btn_Purchase"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:stateListAnimator="@null" />
+
+            <!-- Logo-->
+            <ImageView
+                android:id="@+id/image_blackshores_logo"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="40dp"
+                android:contentDescription="@string/desc_logo_blackshores"
+                android:padding="5dp"
+                android:src="@drawable/blackshoreslogo" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- NEW: Loading Indicator -->
+    <ProgressBar
+        android:id="@+id/loading_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

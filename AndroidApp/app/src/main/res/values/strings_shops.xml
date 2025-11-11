@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Shops Page -->
+    <string name="shops_title">Shops</string>
+    <string name="shops_subheader">Our Partners</string>
+    <string name="no_items_available">Empty Shop…</string>
+
+    <!-- Wuthering Waves Store -->
+    <string name="shops_wuwa">Wuthering Waves</string>
+    <string name="shops_wuwa_label_UID">User ID:</string>
+
+    <!-- Wuthering Waves Store Errors -->
+    <string name="shops_wuwa_UID_error">Invalid User ID</string>
+
+    <!-- Steam Store Page -->
+    <string name="shops_steam">Steam</string>
+    <string name="shops_steam_label_Email">Email:</string>
+
+    <!-- Steam Store Errors -->
+    <string name="shops_steam_Email_error">Invalid Email</string>
+
+    <!-- Confirm Store Purchase Page -->
+    <string name="ConfirmPurchase_PageHeader">Confirm Purchase</string>
+
+    <!-- Labels -->
+    <string name="ConfirmPurchase_Label_Source">Source</string>
+    <string name="ConfirmPurchase_Label_MyBalance">My Balance</string>
+    <string name="ConfirmPurchase_Label_Merchant">Merchant</string>
+    <string name="ConfirmPurchase_Label_InitialBalance">Initial Balance</string>
+    <string name="ConfirmPurchase_Label_PurchaseCost">Purchase Cost</string>
+    <string name="ConfirmPurchase_Label_NewBalance">New Balance</string>
+    <string name="ConfirmPurchase_Label_Note">Note :</string>
+    <string name="ConfirmPurchase_Btn_Purchase">Purchase</string>
+
+
+
+</resources>

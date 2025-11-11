@@ -7,7 +7,7 @@ android {
     compileSdk 36
 
     defaultConfig {
-        applicationId "com.example.socialapp"
+        applicationId "com.example.blackshoresbank"
         minSdk 24
         targetSdk 36
         versionCode 1

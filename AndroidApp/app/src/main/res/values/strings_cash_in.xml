@@ -29,6 +29,8 @@
     <string name="helper_card_digits_amex">15 Digits</string>
 
     <string name="label_card_number">Card Number</string>
+    <string name="label_CashIn">Cash-In Amount</string>
+    <string name="helper_CashIn">Desired Amount</string>
     <string name="label_expiry_date">Expiry Date</string>
     <string name="hint_expiry_month">MM</string>
     <string name="hint_expiry_year">YY</string>
@@ -48,6 +50,7 @@
     <string name="card_discover">Discover</string>
 
     <!-- Error Messages -->
+    <string name="error_invalid_amount">Invalid Amount</string>
     <string name="error_invalid_card_number">Invalid Card Number</string>
     <string name="error_invalid_expiry">Invalid Expiry</string>
     <string name="error_invalid_cvv">Invalid CVV</string>

@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0A0A"
+    tools:context=".SendConfirmActivity">
+
+    <!-- Ui Frame -->
+    <LinearLayout
+        android:id="@+id/SendPreviewFrame"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="4dp"
+        android:paddingVertical="22dp"
+        android:gravity="top|center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5">
+
+        <!-- Cancel Button Container -->
+        <LinearLayout
+            android:id="@+id/CancelBtnContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp">
+
+            <ImageView
+                android:id="@+id/CacelBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ico_back"
+                android:contentDescription="@string/back_button_desc" />
+        </LinearLayout>
+
+        <!-- Receipt Inner Frame -->
+        <LinearLayout
+            android:id="@+id/PreviewInnerFrame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="6dp">
+
+        <!-- Page Title -->
+        <TextView
+            android:id="@+id/SendPreviewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter"
+            android:text="@string/sendconfirm_header"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+            <!-- Amount Header -->
+            <!-- Place actual send amount here -->
+            <TextView
+                android:id="@+id/AmountHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/sendconfirm_placeholder_transferamount"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="30dp" />
+
+            <!-- Detailed Preview Section -->
+            <LinearLayout
+                android:id="@+id/DetailedPreviewContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:padding="15dp"
+                android:background="@drawable/smallcard_bg">
+
+                <!-- Source Row -->
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Label: "Source" -->
+                    <TextView
+                        android:id="@+id/sendconfirm_label_source"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_medium"
+                        android:letterSpacing="0"
+                        android:lineHeight="25sp"
+                        android:text="@string/sendconfirm_label_source"
+                        android:textColor="#AAAAAA"
+                        android:textSize="16sp" />
+
+                    <!-- Spacer -->
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <!-- Right-side values -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:orientation="vertical">
+
+                        <!-- Value: "My Balance" -->
+                        <TextView
+                            android:id="@+id/sendconfirm_label_sourcewallet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_medium"
+                            android:letterSpacing="0"
+                            android:lineHeight="25sp"
+                            android:text="@string/sendconfirm_label_sourcewallet"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+
+                        <!-- Account Number -->
+                        <TextView
+                            android:id="@+id/sendconfirm_placeholder_usernumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_medium"
+                            android:letterSpacing="0"
+                            android:lineHeight="25sp"
+                            android:text="@string/sendconfirm_placeholder_usernumber"
+                            android:textColor="#4C4C4C"
+                            android:textSize="16sp"
+                            android:layout_marginTop="5dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#FFFFFF" />
+
+                <!-- Recipient Row -->
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Label: "Recipient" -->
+                    <TextView
+                        android:id="@+id/sendconfirm_label_recipient"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_medium"
+                        android:letterSpacing="0"
+                        android:lineHeight="25sp"
+                        android:text="@string/sendconfirm_label_recipient"
+                        android:textColor="#AAAAAA"
+                        android:textSize="16sp" />
+
+                    <!-- Spacer -->
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <!-- Right-side values -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:orientation="vertical">
+
+                        <!-- Value: "Anthony Davis" -->
+                        <TextView
+                            android:id="@+id/sendconfirm_placeholder_recipientusername"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_medium"
+                            android:letterSpacing="0"
+                            android:lineHeight="25sp"
+                            android:text="@string/sendconfirm_placeholder_recipientusername"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+
+                        <!-- Account Number -->
+                        <TextView
+                            android:id="@+id/sendconfirm_placeholder_recipientnumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_medium"
+                            android:letterSpacing="0"
+                            android:lineHeight="25sp"
+                            android:text="@string/sendconfirm_placeholder_recipientnumber"
+                            android:textColor="#4C4C4C"
+                            android:textSize="16sp"
+                            android:layout_marginTop="5dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#FFFFFF" />
+
+                <!-- Summary Row: Initial Balance -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <!-- Label: "Initial balance" -->
+                    <TextView
+                        android:id="@+id/sendconfirm_label_initial"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_medium"
+                        android:letterSpacing="0"
+                        android:lineHeight="25sp"
+                        android:text="@string/sendconfirm_label_initial"
+                        android:textColor="#AAAAAA"
+                        android:textSize="16sp" />
+
+                    <!-- Spacer -->
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <!-- Value: "$100.00" -->
+                    <TextView
+                        android:id="@+id/sendconfirm_placeholder_initial"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_medium"
+                        android:letterSpacing="0"
+                        android:lineHeight="25sp"
+                        android:text="@string/sendconfirm_placeholder_initial"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <!-- Summary Row: Transfer amount -->
+
+                <!-- Summary Row: Transaction fee -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <!-- Label: "Transfer amount" -->
+                    <TextView
+                        android:id="@+id/sendconfirm_label_transferamount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_medium"
+                        android:letterSpacing="0"
+                        android:lineHeight="25sp"
+                        android:text="@string/sendconfirm_label_transferamount"
+                        android:textColor="#AAAAAA"
+                        android:textSize="16sp" />
+
+                    <!-- Spacer -->
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <!-- Value: "$99.00" -->
+                    <TextView
+                        android:id="@+id/sendconfirm_placeholder_transferamount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_medium"
+                        android:letterSpacing="0"
+                        android:lineHeight="25sp"
+                        android:text="@string/sendconfirm_placeholder_transferamount"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <!-- Label: "Transaction fee" -->
+                    <TextView
+                        android:id="@+id/sendconfirm_label_fee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_medium"
+                        android:letterSpacing="0"
+                        android:lineHeight="25sp"
+                        android:text="@string/sendconfirm_label_fee"
+                        android:textColor="#AAAAAA"
+                        android:textSize="16sp" />
+
+                    <!-- Spacer -->
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <!-- Value: "$1.00" -->
+                    <TextView
+                        android:id="@+id/sendconfirm_placeholder_fee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_medium"
+                        android:letterSpacing="0"
+                        android:lineHeight="25sp"
+                        android:text="@string/sendconfirm_placeholder_fee"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <!-- Summary Row: New balance -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <!-- Label: "New balance" -->
+                    <TextView
+                        android:id="@+id/sendconfirm_label_newbalance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_medium"
+                        android:letterSpacing="0"
+                        android:lineHeight="25sp"
+                        android:text="@string/sendconfirm_label_newbalance"
+                        android:textColor="#AAAAAA"
+                        android:textSize="16sp" />
+
+                    <!-- Spacer -->
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <!-- Value: "$0.00" -->
+                    <TextView
+                        android:id="@+id/sendconfirm_placeholder_newbalance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_medium"
+                        android:letterSpacing="0"
+                        android:lineHeight="25sp"
+                        android:text="@string/sendconfirm_placeholder_newbalance"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!-- Note Container -->
+            <LinearLayout
+                android:id="@+id/confirm_note_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/smallcard_bg">
+
+                <!-- "Note" Label -->
+                <TextView
+                    android:id="@+id/confirm_notelabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:letterSpacing="0"
+                    android:text="@string/sendconfirm_label_note"
+                    android:textColor="#CCCCCC"
+                    android:textSize="16sp"
+                    android:lineHeight="25sp" />
+
+                <!-- line -->
+                <View
+                    android:id="@+id/receipt_notedivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#FFFFFF" />
+
+                <!-- Note Contents -->
+                <TextView
+                    android:id="@+id/receipt_place"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/inter_medium"
+                    android:letterSpacing="0"
+                    android:text="@string/sendconfirm_placeholder_note"
+                    android:textColor="#CCCCCC"
+                    android:textSize="16sp"
+                    android:lineHeight="25sp" />
+            </LinearLayout>
+
+            <!-- Action Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/SendMoneyBtn"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/general_button"
+                android:text="@string/sendconfirm_btn_send"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:stateListAnimator="@null" />
+
+            <!-- Logo-->
+            <ImageView
+                android:id="@+id/image_blackshores_logo"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="40dp"
+                android:contentDescription="@string/desc_logo_blackshores"
+                android:padding="5dp"
+                android:src="@drawable/blackshoreslogo" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

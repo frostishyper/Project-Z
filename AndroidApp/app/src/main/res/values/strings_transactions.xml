@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Transactions Page -->
+    <string name="TransactionsPage_Label">Transactions</string>
+    <string name="Tr_Placeholder_Date">October 28, 2025</string>
+    <string name="Tr_Placeholder_SentLabel">Sent Money To</string>
+    <string name="Tr_Placeholder_RecievedLabel">Recieved Money From</string>
+    <string name="Tr_Placeholder_PurchasedLabel">Purchased From</string>
+    <string name="Tr_Placeholder_Time">5:61 AM</string>
+    <string name="Tr_Placeholder_Amount">1000.00</string>
+    <string name="Currency">$</string>
+    <string name="Tr_Placeholder_Entity">Someone</string>
+</resources>

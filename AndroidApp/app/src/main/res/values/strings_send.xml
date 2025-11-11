@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Send Money Page -->
+    <string name="send_header">Send Money</string>
+    <string name="send_label_recipient">Recipient #</string>
+    <string name="send_label_amount">Amount $</string>
+    <string name="send_label_note">Note (Optional)</string>
+    <string name="send_btn_continue">Continue</string>
+
+    <!-- Helpers -->
+    <string name="send_helper_recipient">Recipient Account Number</string>
+    <string name="send_helper_amount">Current Wallet Balance: $</string>
+    <string name="send_helper_note">50 Characters Only</string>
+
+    <!-- Errors -->
+    <string name="send_error_amount">(1$ Transfer Fee) You Only Have: $</string>
+
+    <!-- Greenlights -->
+    <string name="send_approve_amount">(+1$ Transfer Fee)</string>
+    <string name="send_approve_note">Note Will Be Included</string>
+
+
+    <!-- Confirm Send Page -->
+    <!-- Static -->
+    <string name="sendconfirm_header">Confirm Transaction</string>
+    <string name="sendconfirm_label_source">Source</string>
+    <string name="sendconfirm_label_sourcewallet">My Balance</string>
+    <string name="sendconfirm_label_recipient">Recipient</string>
+    <string name="sendconfirm_label_note">Note :</string>
+    <string name="sendconfirm_label_initial">Initial Balance</string>
+    <string name="sendconfirm_label_transferamount">Transfer amount</string>
+    <string name="sendconfirm_label_fee">Transaction fee</string>
+    <string name="sendconfirm_label_newbalance">New balance</string>
+    <string name="sendconfirm_btn_send">Send Money</string>
+
+    <!-- Placeholders -->
+    <string name="sendconfirm_placeholder_usernumber">0912345678910</string>
+    <string name="sendconfirm_placeholder_recipientusername">Anthony Davis</string>
+    <string name="sendconfirm_placeholder_recipientnumber">099876543210</string>
+    <string name="sendconfirm_placeholder_initial">$100.00</string>
+    <string name="sendconfirm_placeholder_transferamount">$99.00</string>
+    <string name="sendconfirm_placeholder_fee">$1.00</string>
+    <string name="sendconfirm_placeholder_newbalance">$0.00</string>
+    <string name="sendconfirm_placeholder_note">For The Good Stuff</string>
+
+
+</resources>

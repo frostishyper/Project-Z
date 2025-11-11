@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CardFormScreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0A0A"
+    tools:context=".SendActivity">
+
+    <ScrollView
+        android:id="@+id/CardScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Form Container -->
+        <LinearLayout
+            android:id="@+id/CardFormContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="37dp"
+            android:padding="10dp">
+
+            <!-- Back Button -->
+            <ImageView
+                android:id="@+id/BackBtn"
+                android:layout_width="45dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ico_back"/>
+
+            <!-- Page Header Container -->
+            <LinearLayout
+                android:id="@+id/CardHeaderContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- Header Text-->
+                <TextView
+                    android:id="@+id/CardTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/send_header"
+                    android:textColor="#FFFFFF"
+                    android:textSize="28sp"
+                    android:gravity="center_vertical" />
+            </LinearLayout>
+
+            <!-- Recipient Section -->
+            <LinearLayout
+                android:id="@+id/RecipientContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="40dp">
+
+                <TextView
+                    android:id="@+id/RecipientLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/send_label_recipient"
+                    android:textColor="#D1D5DB"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/inter_medium" />
+
+                <EditText
+                    android:id="@+id/RecipientInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/input_field_bg"
+                    android:fontFamily="@font/inter"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#CCCCCC"
+                    android:textSize="15sp"
+                    android:paddingHorizontal="16dp"
+                    android:inputType="number"
+                    android:digits="0123456789-"
+                    android:maxLength="19" />
+
+                <!-- Helper -->
+                <TextView
+                    android:id="@+id/RecipientHelper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/send_helper_recipient"
+                    android:textColor="#9CA3AF"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Send Amount Section -->
+            <LinearLayout
+                android:id="@+id/SendAmountContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="40dp">
+
+                <TextView
+                    android:id="@+id/SendAmountLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/send_label_amount"
+                    android:textColor="#D1D5DB"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/inter_medium" />
+
+                <EditText
+                    android:id="@+id/SendAmountInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/input_field_bg"
+                    android:fontFamily="@font/inter"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#CCCCCC"
+                    android:textSize="15sp"
+                    android:paddingHorizontal="16dp"
+                    android:inputType="number"
+                    android:digits="0123456789-"
+                    android:maxLength="19" />
+
+                <!-- Validation Error -->
+                <TextView
+                    android:id="@+id/SendAmountError"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/send_error_amount"
+                    android:textColor="#C62828"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_marginTop="6dp"
+                    android:visibility="gone" />
+
+                <!-- Validation Success -->
+                <TextView
+                    android:id="@+id/SendAmountApprove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/send_approve_amount"
+                    android:textColor="#2E7D32"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_marginTop="6dp"
+                    android:visibility="gone" />
+
+                <!-- Helper -->
+                <TextView
+                    android:id="@+id/SendAmountHelper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/send_helper_amount"
+                    android:textColor="#9CA3AF"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Note Section -->
+            <LinearLayout
+                android:id="@+id/NoteContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="40dp">
+
+                <TextView
+                    android:id="@+id/NoteLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/send_label_note"
+                    android:textColor="#D1D5DB"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/inter_medium" />
+
+                <EditText
+                    android:id="@+id/NoteInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/input_field_bg"
+                    android:fontFamily="@font/inter"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#CCCCCC"
+                    android:textSize="15sp"
+                    android:paddingHorizontal="16dp"
+                    android:inputType="number"
+                    android:digits="0123456789-"
+                    android:maxLength="19" />
+
+                <!-- If Note Is Included-->
+                <TextView
+                    android:id="@+id/NoteApprove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/send_approve_note"
+                    android:textColor="#2E7D32"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_marginTop="6dp"
+                    android:visibility="gone" />
+
+                <!-- Helper -->
+                <TextView
+                    android:id="@+id/NoteHelper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/send_helper_note"
+                    android:textColor="#9CA3AF"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Action Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Proceed"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/general_button"
+                android:text="@string/send_btn_continue"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:stateListAnimator="@null" />
+
+            <!-- Logo -->
+            <ImageView
+                android:id="@+id/image_blackshores_logo"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="40dp"
+                android:contentDescription="@string/desc_logo_blackshores"
+                android:padding="5dp"
+                android:src="@drawable/blackshoreslogo" />
+
+            <!-- Spacer -->
+            <View
+                android:id="@+id/ScrollSpacer"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:contentDescription="@null" />
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,15 +1,4 @@
-//  =====================================
-//  _ (1.0)
-//  (PLEASE UPDATE VERSION IF YOUR UPDATING)
-//  
-//  Digest:
-//  Register Router, recieves register details from front end andd proccesses them, sanitizes and validated the details. if it passes the checks then 
-//  an account is created with a matching wallet.
-//  
-//  
-//
-//  =====================================
-
+// Register Route
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
