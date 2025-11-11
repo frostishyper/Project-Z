@@ -10,7 +10,7 @@
     android:paddingEnd="20dp"
     android:paddingTop="37dp">
 
-    <!-- Row: Back button only (left-aligned) -->
+    <!-- Row: Back button only -->
     <LinearLayout
         android:id="@+id/layout_back_row"
         android:layout_width="match_parent"
@@ -36,7 +36,7 @@
         android:id="@+id/text_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="81dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/inter_medium"
         android:text="@string/title_cash_in"
         android:textColor="#FFFFFF"
@@ -296,7 +296,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Footer Logo -->
+    <!-- Logo -->
     <ImageView
         android:id="@+id/image_blackshores_logo"
         android:layout_width="match_parent"

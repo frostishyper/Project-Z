@@ -15,11 +15,17 @@ import com.example.blackshoresbank.models.SendMoneyPrepareRequest;
 import com.example.blackshoresbank.models.SendMoneyPrepareResponse;
 import com.example.blackshoresbank.models.SendMoneyCommitRequest;
 import com.example.blackshoresbank.models.SendMoneyCommitResponse;
+import com.example.blackshoresbank.models.GetShopRequest;
+import com.example.blackshoresbank.models.GetShopResponse;
+import com.example.blackshoresbank.models.ShopPurchaseRequest;
+import com.example.blackshoresbank.models.ShopPurchasePrepareResponse;
+import com.example.blackshoresbank.models.ShopPurchaseCommitResponse;
 
 // Retrofit Protocols & Procedures
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
+
 
 public interface ApiService {
 
@@ -45,5 +51,14 @@ public interface ApiService {
 
     @POST("api/sendmoney/commit")
     Call<SendMoneyCommitResponse> CommitSendMoney(@Body SendMoneyCommitRequest request);
+
+    @POST("api/getshop")
+    Call<GetShopResponse> getShopListings(@Body GetShopRequest request);
+
+    @POST("api/shoppurchase/prepare")
+    Call<ShopPurchasePrepareResponse> shopPurchasePrepare(@Body ShopPurchaseRequest request);
+
+    @POST("api/shoppurchase/commit")
+    Call<ShopPurchaseCommitResponse> shopPurchaseCommit(@Body ShopPurchaseRequest request);
 
 }
