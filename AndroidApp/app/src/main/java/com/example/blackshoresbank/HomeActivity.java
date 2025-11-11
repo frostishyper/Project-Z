@@ -66,6 +66,13 @@ public class HomeActivity extends BaseActivity {
             startActivity(intent);
         });
 
+        // Navigate to Shops
+        LinearLayout actionShops = findViewById(R.id.Action_Shop);
+        actionShops.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, ShopsActivity.class);
+            startActivity(intent);
+        });
+
 
     }
 

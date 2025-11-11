@@ -39,6 +39,8 @@ const WalletRoute = require('./Routes/Wallet');
 const TransactionsRoute = require('./Routes/Transactions');
 const CardCashInRoute = require('./Routes/CardCash-In');
 const SendMoneyRoute = require('./Routes/SendMoney');
+const GetShop = require('./Routes/GetShop');
+const ShopPurchaseRoute = require('./Routes/ShopPurchase');
 
 
 //  =====================================
@@ -58,6 +60,8 @@ app.use('/api/wallet', WalletRoute);
 app.use('/api/CardCashIn', CardCashInRoute);
 app.use('/api/transactions', TransactionsRoute);
 app.use('/api/sendmoney', SendMoneyRoute); // Two End Points Inside
+app.use('/api/getshop', GetShop);
+app.use('/api/shoppurchase', ShopPurchaseRoute);
 
 
 

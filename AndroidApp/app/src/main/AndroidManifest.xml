@@ -37,6 +37,10 @@
         <activity android:name=".ReceiptActivity" />
         <activity android:name=".SendActivity" />
         <activity android:name=".SendConfirmActivity" />
+        <activity android:name=".ShopsActivity" />
+        <activity android:name=".ConfirmPurchaseActivity" />
+        <activity android:name=".WuwaShopActivity" />
+        <activity android:name=".SteamShopActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

@@ -99,5 +99,60 @@ CREATE TABLE Transactions (
 <------------------------------------------------------------------------------------------------>
 
 
+(LISTINGS TABLE):
+
+-- This table stores the main "product" or "bundle" sold in the store.
+CREATE TABLE Listings (
+    Listing_ID INT AUTO_INCREMENT PRIMARY KEY,
+    
+    -- Foreign key linking to the Merchants table by name
+    Merchant_Name VARCHAR(100) NOT NULL,
+    
+    -- The display name of the listing, e.g., "Radiant Package"
+    Listing_Name VARCHAR(255) NOT NULL UNIQUE,
+    
+    -- The price of the listing
+    Listing_Price DECIMAL(15, 2) DEFAULT 0.00,
+    
+    -- The name of the icon for the frontend, e.g., "radiant_package_icon"
+    Listing_Icon_Name VARCHAR(100) NULL,
+    
+    -- Timestamps for tracking
+    Created_At DATETIME DEFAULT CURRENT_TIMESTAMP,
+    Updated_At DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    
+    -- Defines the foreign key relationship
+    CONSTRAINT fk_listing_merchant
+        FOREIGN KEY (Merchant_Name)
+        REFERENCES Merchants(Merchant_Name)
+        ON DELETE RESTRICT 
+        ON UPDATE CASCADE   
+);
+
+<------------------------------------------------------------------------------------------------>
+
+
+(LISTINGS INCLUSIONS TABLE):
+
+-- This table stores all the individual items inside a listing.
+-- This creates the one-to-many relationship (1 Listing -> Many Inclusions).
+CREATE TABLE Listing_Inclusions (
+    Inclusion_ID INT AUTO_INCREMENT PRIMARY KEY,
+    
+    -- Foreign key linking to the main Listings table
+    Listing_ID INT NOT NULL,
+    
+    Inclusion_Name VARCHAR(255) NOT NULL,
+    
+    -- The quantity of this item, e.g., 1, 10, or 600
+    Quantity INT NOT NULL,
+    
+    -- Defines the foreign key relationship
+    CONSTRAINT fk_inclusion_listing
+        FOREIGN KEY (Listing_ID)
+        REFERENCES Listings(Listing_ID)
+        ON DELETE CASCADE 
+        ON UPDATE CASCADE  
+);
 
 <------------------------------------------------------------------------------------------------>
