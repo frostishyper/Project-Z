@@ -208,7 +208,7 @@ public class HomeActivity extends BaseActivity {
         typeView.setText(typeText);
         dateView.setText(formatDate(tx.getDate()));
         partnerView.setText(partnerName);
-        amountView.setText(tx.getAmount());
+        amountView.setText(tx.getAmount().trim().replace("₱", "$"));
         amountView.setTextColor(amountColor);
 
         return view;
